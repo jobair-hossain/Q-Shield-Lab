@@ -17,6 +17,19 @@
     });
   }
 
+  // Use the official, UCA-hosted academic logo when available.
+  // If the external image cannot load, retain a readable university-name fallback.
+  document.querySelectorAll('.sidebar-affiliation-mark').forEach(function (mark) {
+    var logo = mark.querySelector('img');
+    if (!logo) return;
+    var update = function () {
+      mark.classList.toggle('has-official-logo', logo.naturalWidth > 0);
+    };
+    logo.addEventListener('load', update);
+    logo.addEventListener('error', update);
+    if (logo.complete) update();
+  });
+
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 

@@ -64,3 +64,9 @@ Both animated effects respect `prefers-reduced-motion` automatically.
 3. The canonical URLs in each page's `<head>` assume the site lives at
    `https://jobair-hossain.github.io/Q-Shield-Lab2/` — update them (find-and-replace
    across the `.html` files) if the repo name changes.
+
+
+## October 2026: homepage slideshow and official UCA affiliation
+
+- The sidebar now links the University's official primary academic logo beneath the Website / ORCID links **on all nine pages**. The image is hosted directly by the University of Central Arkansas at `uca.edu/toolkit`, displayed on a white panel without changing the mark. If you receive an approved high-resolution local logo through the UCA BEARSHARE portal, save it at `assets/img/logos/uca-primary.png` and update the `<img src>` on each page to the local path.
+- The homepage portrait has been converted to a responsive slideshow in the **same position**. Since no event or student group photos were included in the repository, the portrait is currently the only active photo. See `assets/img/lab/README.md` for the exact steps to add genuine lab images. JavaScript is in `assets/js/slideshow.js` and styling in `assets/css/style.css`.

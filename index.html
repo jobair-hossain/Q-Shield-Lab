@@ -36,6 +36,16 @@
       <a href="https://jobair-hossain.github.io/" target="_blank" rel="noopener">Website ↗</a>
       <a href="https://orcid.org/0000-0002-6316-5334" target="_blank" rel="noopener">ORCID ↗</a>
     </div>
+
+    <!-- Affiliation: use the official university logo, not a recreated mark. -->
+    <div class="sidebar-affiliation">
+      <p class="sidebar-affiliation-label">Host Institution</p>
+      <a class="sidebar-affiliation-mark" href="https://uca.edu/" target="_blank" rel="noopener noreferrer" aria-label="Visit the University of Central Arkansas website">
+        <span class="sidebar-affiliation-fallback" aria-hidden="true">University of <strong>Central Arkansas</strong></span>
+        <img src="https://uca.edu/toolkit/files/2016/04/horiz-digital-full-300x120.png"
+             alt="University of Central Arkansas" loading="lazy" decoding="async">
+      </a>
+    </div>
   </aside>
 
   <div class="content">
@@ -86,8 +96,147 @@
               
                 <a class="link-arrow" href="research.html">Explore our research →</a>
               </div>
-            <div class="photo-frame">
-              <img src="assets/img/director.jpg" alt="Md Jobair Hossain Faruk, Ph.D., Lab Director" loading="lazy">
+            <!-- HOME PHOTO SLIDESHOW: keep slides here, in the existing portrait location.
+                 To add real lab photos, copy a <figure> below, change the image path,
+                 description, and caption, and save the photo in assets/img/lab/.
+                 The controls and automatic rotation appear when 2+ slides are present. -->
+            <div class="photo-frame lab-slideshow" data-interval="6500" role="region" aria-roledescription="carousel" aria-label="Q-SHIELD Lab photos">
+              
+            <!-- Original Director Photo: Preserved -->
+            <!--
+            <figure class="lab-slide is-active" role="group"
+                    aria-roledescription="slide" aria-label="Photo 1 of 1">
+              <img src="assets/img/director.jpg"
+                  alt="Md Jobair Hossain Faruk, director of Q-SHIELD Lab"
+                  loading="eager" fetchpriority="high" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">Q-SHIELD LAB</span>
+                <span class="lab-slide-caption">Research Leadership</span>
+              </figcaption>
+            </figure>
+            -->
+
+            <!-- 2. Aiden at IEEE SSCET 2026 -->
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/aiden-sscet-2026.JPG"
+                  alt="Aiden presenting his Q-SHIELD research at IEEE SSCET 2026"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">IEEE SSCET 2026</span>
+                <span class="lab-slide-caption">Aiden Presents His Research Paper</span>
+              </figcaption>
+            </figure>
+
+
+            <!-- 1. Kody at IEEE SSCET 2026 -->
+            <figure class="lab-slide is-active" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/kody-sscet-2026.JPG"
+                  alt="Kody presenting his Q-SHIELD research at IEEE SSCET 2026"
+                  loading="eager" fetchpriority="high" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">IEEE SSCET 2026</span>
+                <span class="lab-slide-caption">Kody Presents His Research Paper</span>
+              </figcaption>
+            </figure>
+            
+            <!-- 3. Elementary School Students Visit Q-SHIELD Lab -->
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/elementary-school-visit.JPG"
+                  alt="Elementary school students visiting Q-SHIELD Lab at UCA"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">STEM OUTREACH</span>
+                <span class="lab-slide-caption">Inspiring Young Minds Through STEM</span>
+              </figcaption>
+            </figure>
+
+            <!-- 4. NAIRR AI Classroom Expansion Conference --> 
+            <!-- Retained as commented until the photo is added -->
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/nairr-ai-conference.jpeg"
+                  alt="Q-SHIELD Lab Director attending the NAIRR AI Classroom Expansion Conference"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">AI EDUCATION & LEADERSHIP</span>
+                <span class="lab-slide-caption">Lab Director at NAIRR AI Classroom Expansion Conference</span>
+              </figcaption>
+            </figure>
+           
+
+            <!-- 7. Lab Director at IEEE ICHI 2026 -->
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/ichi-2026.jpg"
+                  alt="Q-SHIELD Lab Director attending IEEE ICHI 2026"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">IEEE ICHI 2026</span>
+                <span class="lab-slide-caption">Lab Director at IEEE Healthcare Informatics Conference</span>
+              </figcaption>
+            </figure>
+
+            <!-- 8. COSE Annual Student Research Symposium -->
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/cose-symposium-2026.JPG"
+                  alt="Q-SHIELD Lab students presenting research posters at the COSE Annual Student Research Symposium"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">STUDENT RESEARCH SHOWCASE</span>
+                <span class="lab-slide-caption">Students Present Research Posters at COSE Symposium</span>
+              </figcaption>
+            </figure>
+
+            <!-- 5. Kody: First Place Outstanding Capstone Project -->
+            <!--
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/kody-capstone-award.jpg"
+                  alt="Kody receiving First Place in the Outstanding Capstone Project Awards"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">STUDENT ACHIEVEMENT</span>
+                <span class="lab-slide-caption">Kody Wins First Place, Outstanding Capstone Project</span>
+              </figcaption>
+            </figure>
+            -->
+
+            <!-- 6. Aiden: Best AI Innovative Project Award -->
+            <!--
+            <figure class="lab-slide" role="group"
+                    aria-roledescription="slide">
+              <img src="assets/img/lab/aiden-capstone-award.jpg"
+                  alt="Aiden receiving the Outstanding Capstone Project Award for Best AI Innovative Project"
+                  loading="lazy" decoding="async">
+              <figcaption>
+                <span class="lab-slide-overline">STUDENT ACHIEVEMENT</span>
+                <span class="lab-slide-caption">Aiden Receives Best AI Innovative Project Award</span>
+              </figcaption>
+            </figure>
+            -->
+
+            <!-- Slideshow Controls: Keep Unchanged -->
+            <div class="lab-slideshow-controls" hidden>
+              <button class="lab-slideshow-arrow lab-slideshow-prev"
+                      type="button" aria-label="Previous photo">&#8249;</button>
+              <button class="lab-slideshow-arrow lab-slideshow-next"
+                      type="button" aria-label="Next photo">&#8250;</button>
+              <div class="lab-slideshow-nav">
+                <div class="lab-slideshow-dots"
+                    role="group" aria-label="Choose lab photo"></div>
+                <button class="lab-slideshow-pause" type="button"
+                        aria-label="Pause slideshow"
+                        aria-pressed="false"
+                        title="Pause slideshow">&#10074;&#10074;</button>
+              </div>
+            </div>
+
+            <span class="sr-only lab-slideshow-announcement"
+                  aria-live="off"></span>
             </div>
           </div>
         </section>
@@ -246,6 +395,7 @@
 </div>
 
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/slideshow.js" defer></script>
 <script src="assets/js/quantum-hero.js" defer></script>
 </body>
 </html>

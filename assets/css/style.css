@@ -114,6 +114,16 @@ input,select,textarea{font:inherit}
 .sidebar-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
 .sidebar-btns a{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:700;color:#fff;text-align:center;transition:background .2s,border-color .2s}
 .sidebar-btns a:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
+/* Institutional affiliation: independent of the contact-link buttons. */
+.sidebar-affiliation{margin-top:2px;padding-top:17px;border-top:1px solid rgba(255,255,255,.17)}
+.sidebar-affiliation-label{margin:0 0 10px;text-align:center;color:#d4c2ec;font-size:10px;line-height:1.4;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.sidebar-affiliation-mark{position:relative;display:flex;align-items:center;justify-content:center;min-height:91px;padding:10px 12px;background:#fff;border:1px solid rgba(255,255,255,.45);border-radius:11px;box-shadow:0 8px 22px -12px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s}
+.sidebar-affiliation-mark:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(0,0,0,.55)}
+.sidebar-affiliation-fallback{font:500 10px/1.55 var(--font-body);color:#582c83;text-align:center;letter-spacing:.11em;text-transform:uppercase}
+.sidebar-affiliation-fallback strong{display:block;font:700 16px/1.25 Georgia,serif;letter-spacing:.035em;color:#582c83}
+.sidebar-affiliation-mark img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% - 24px);max-width:211px;max-height:78px;height:auto;object-fit:contain;opacity:0;transition:opacity .2s}
+.sidebar-affiliation-mark.has-official-logo img{opacity:1}
+.sidebar-affiliation-mark.has-official-logo .sidebar-affiliation-fallback{opacity:0}
 .sidebar-close{display:none}
 
 .content{flex:1;min-width:0;display:flex;flex-direction:column}
@@ -155,6 +165,33 @@ main{flex:1}
 .intro-grid .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .intro-grid .muted-p{color:var(--muted)}
 
+/* Photo gallery: occupies precisely the former homepage portrait frame. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.intro-grid .lab-slideshow{position:relative;isolation:isolate}
+.lab-slideshow .lab-slide{position:absolute;inset:0;z-index:0;margin:0;opacity:0;visibility:hidden;transition:opacity .75s ease,visibility .75s ease}
+.lab-slideshow .lab-slide.is-active{opacity:1;visibility:visible;z-index:1}
+.intro-grid .lab-slideshow .lab-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 23%}
+.lab-slide figcaption{position:absolute;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:3px;padding:45px 24px 20px;color:#fff;background:linear-gradient(0deg,rgba(17,8,32,.82) 0%,rgba(17,8,32,.35) 52%,transparent 100%);text-shadow:0 1px 8px rgba(0,0,0,.28)}
+.lab-slide-overline{font:700 10px/1.25 var(--font-body);letter-spacing:.15em;color:#ded0f0}
+.lab-slide-caption{font:600 15px/1.4 var(--font-display);max-width:72%;color:#fff}
+.lab-slideshow-controls{position:absolute;inset:0;z-index:3;pointer-events:none}
+.lab-slideshow-controls[hidden]{display:none}
+.lab-slideshow-controls button{pointer-events:auto}
+.lab-slideshow-arrow{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:38px;height:42px;border:1px solid rgba(255,255,255,.5);border-radius:9px;background:rgba(20,10,35,.48);backdrop-filter:blur(8px);color:#fff;font:400 30px/1 Georgia,serif;opacity:0;transition:opacity .2s,background .2s}
+.lab-slideshow-prev{left:12px}.lab-slideshow-next{right:12px}
+.lab-slideshow:hover .lab-slideshow-arrow,.lab-slideshow:focus-within .lab-slideshow-arrow{opacity:1}
+.lab-slideshow-arrow:hover{background:rgba(20,10,35,.85)}
+.lab-slideshow-nav{position:absolute;right:15px;bottom:15px;display:flex;align-items:center;gap:9px;padding:5px 6px;border-radius:999px;background:rgba(20,10,35,.48);backdrop-filter:blur(7px);pointer-events:auto}
+.lab-slideshow-dots{display:flex;align-items:center;gap:7px}
+.lab-slideshow-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transition:background .2s,width .2s}
+.lab-slideshow-dot[aria-current="true"]{width:21px;border-radius:9px;background:#fff}
+.lab-slideshow-dot:hover{background:#fff}
+.lab-slideshow-pause{width:24px;height:24px;display:grid;place-items:center;border-radius:50%;color:#fff;font:700 10px/1 var(--font-body)}
+.lab-slideshow-pause:hover{background:rgba(255,255,255,.15)}
+@media (hover:none){.lab-slideshow-arrow{opacity:1}}
+@media (max-width:420px){.lab-slide figcaption{padding:38px 17px 15px}.lab-slide-caption{font-size:13px}.lab-slideshow-nav{right:10px;bottom:11px}.lab-slideshow-arrow{width:32px;height:38px}}
+@media (prefers-reduced-motion:reduce){.lab-slideshow .lab-slide{transition:none}.lab-slideshow-arrow,.lab-slideshow-dot{transition:none}}
+
 .updates-box{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:8px 26px;max-height:620px;overflow-y:auto}
 .updates-list{border-top:0}
 .update-item{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -179,9 +216,17 @@ main{flex:1}
 .orbit-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}
 .orbit-copy h2{color:#fff}
 .orbit-copy p{color:#d8cbef}
-.orbit-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
-.orbit-metrics .m-num{font-family:var(--font-display);font-size:1.8rem;color:#fff}
-.orbit-metrics .m-lbl{font-size:12px;color:#b7a3da}
+/* Space the research-specific orbit card below its full-width page banner. */
+.orbit-section--research{margin-top:52px}
+/* Constrain copy so an orbit navigation label never overlaps the paragraph. */
+.orbit-section--research .orbit-copy .lede{max-width:418px;font-size:16px;line-height:1.72}
+/* A durable research progression, instead of time-sensitive proposal counts. */
+.research-pathway{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:33px;padding-top:25px;border-top:1px solid rgba(255,255,255,.19)}
+.research-pathway-step{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;position:relative}
+.research-pathway-step:not(:last-child)::after{content:"→";position:absolute;right:2px;top:20px;color:var(--cyan);opacity:.8;font-size:16px;line-height:1}
+.research-pathway-number{font:700 10px/1.2 var(--font-body);letter-spacing:.1em;color:var(--cyan)}
+.research-pathway-step strong{font:600 15px/1.3 var(--font-display);color:#fff}
+.research-pathway-step>span:last-child{font:400 11px/1.45 var(--font-body);color:#c9bade}
 
 .orbit-wrap{position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto;width:100%}
 .orbit-spokes{position:absolute;inset:0}
@@ -210,29 +255,80 @@ main{flex:1}
 .orbit-legend i{width:8px;height:8px;border-radius:50%;background:var(--accent-line)}
 .orbit-wrap.paused *{animation-play-state:paused!important}
 
-/* ---------- 9. PAGE INTRO STATS + THEME BLOCKS (Research) ---------- */
-.stat-row{display:flex;gap:40px;flex-wrap:wrap;margin-top:28px}
-.stat-row .num{font-family:var(--font-display);font-size:1.8rem;color:var(--ink);display:block}
-.stat-row .lbl{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
-
-.theme-block{padding:48px 0;border-bottom:1px solid var(--line)}
-.theme-block:last-child{border-bottom:0}
-.theme-block-head{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:center;margin-bottom:32px}
-.theme-figure{width:160px;height:160px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md)}
-.theme-figure svg{width:100%;height:100%;display:block}
-.theme-num{font-family:var(--font-display);font-size:14px;color:var(--purple-700);margin-bottom:8px}
-.theme-block h2{font-size:1.7rem;margin-bottom:6px}
-.theme-question{font:italic 18px/1.5 var(--font-body);color:var(--muted);margin:0}
-.theme-body{max-width:800px}
-.subproject{border-top:1px solid var(--line);padding:20px 0}
-.subproject:first-child{border-top:0;padding-top:0}
-.subproject h3{font-size:16px;margin-bottom:6px}
-.subproject p{color:var(--muted);font-size:14px;margin-bottom:10px}
-.subproject .link-row{display:flex;gap:14px;flex-wrap:wrap}
-.subproject .link-row a{font-size:12.5px;font-weight:700;color:var(--purple-700)}
-.subproject .link-row a:hover{color:var(--purple-600);text-decoration:underline}
-.theme-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
-.theme-meta span{font-size:12px;border:1px solid var(--line);padding:5px 10px;border-radius:6px;color:var(--muted)}
+/* ---------- 9. RESEARCH PAGE: SELECTED PROJECTS ---------- */
+.research-portfolio{padding-top:76px;padding-bottom:30px}
+.research-portfolio-intro{display:flex;justify-content:space-between;align-items:end;gap:28px}
+.research-portfolio-intro .eyebrow,.research-past-head .eyebrow{display:flex}
+.research-portfolio-intro .section-title{margin-bottom:18px;font-size:clamp(1.8rem,2.9vw,2.4rem)}
+.research-portfolio-lede{font-size:16px;max-width:750px;color:var(--muted);line-height:1.7;margin:0}
+.research-category-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:30px 0 20px}
+.research-category-nav a{display:flex;align-items:center;gap:10px;min-height:67px;border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:var(--soft);color:var(--ink);font:600 13px/1.4 var(--font-body);transition:background .2s,border-color .2s,transform .2s}
+.research-category-nav a:hover{border-color:#bdabd2;background:#f0eaf7;transform:translateY(-2px)}
+.research-category-nav a>span:first-child{font:700 12px/1 var(--font-display);color:var(--purple-700)}
+.research-category-nav a>span:last-child{font-size:16px;color:var(--purple-700);margin-left:auto}
+.research-area{scroll-margin-top:92px;padding:64px 0 60px;border-bottom:1px solid var(--line)}
+.research-area:last-child{border-bottom:0}
+.research-area-head{display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:20px;align-items:center;margin-bottom:27px}
+.research-area-icon{width:88px;height:88px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--soft);box-shadow:0 12px 28px -20px rgba(21,10,34,.3)}
+.research-area-icon img{width:100%;height:100%;object-fit:cover}
+.research-area-kicker{font:700 11px/1.4 var(--font-body);letter-spacing:.16em;color:var(--purple-700);margin:0 0 8px}
+.research-area h3{font-size:clamp(1.5rem,2.35vw,2rem);margin:0 0 4px}
+.research-area-subtitle{color:var(--purple-700);font-size:14px;font-weight:600;margin:0}
+.research-area-papers{font-size:13px;white-space:nowrap;font-weight:700;color:var(--purple-700);border-bottom:1px solid #bba7d3;padding-bottom:5px}
+.research-area-papers:hover{text-decoration:none;color:var(--purple-500);border-color:currentColor}
+.research-area-question{font:600 clamp(16px,1.9vw,19px)/1.5 var(--font-display);color:var(--ink);margin:0 0 9px;max-width:900px}
+.research-area-description{font-size:14.5px;line-height:1.78;color:var(--muted);max-width:875px;margin:0 0 30px}
+.research-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.research-project-card{display:flex;flex-direction:column;min-width:0;min-height:242px;padding:24px 25px 21px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 8px 28px -28px rgba(21,10,34,.4);transition:transform .18s,border-color .18s,box-shadow .18s;position:relative;overflow:hidden}
+.research-project-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple-700),var(--cyan));opacity:0;transition:opacity .18s}
+.research-project-card:hover{transform:translateY(-3px);border-color:#d3c2e4;box-shadow:0 14px 32px -25px rgba(63,36,98,.45)}
+.research-project-card:hover::before{opacity:1}
+.research-card-top{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:17px;flex-wrap:wrap}
+.research-card-id{font:700 12px/1 var(--font-display);letter-spacing:.09em;color:#8a7ba1}
+.research-status{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font:700 10.5px/1.1 var(--font-body);letter-spacing:.025em;background:#f1edf7;color:#624784}
+.research-status--publication{background:#e6f4ef;color:#206e54}
+.research-project-card h4{font-size:17px;line-height:1.35;color:var(--ink);margin:0 0 11px;letter-spacing:-.008em}
+.research-project-card p{color:var(--muted);font-size:13.5px;line-height:1.7;margin:0 0 22px;flex:1}
+.research-card-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
+.research-card-tags span{font:600 11px/1.25 var(--font-body);background:var(--soft);border:1px solid #ece6f2;border-radius:6px;padding:6px 8px;color:var(--purple-700)}
+.research-past-section{padding:50px 28px 52px;background:var(--soft);border-radius:18px;margin-bottom:32px}
+.research-past-head .section-title{font-size:clamp(1.55rem,2.4vw,2rem);margin-bottom:15px}
+.research-past-head>p:last-child{max-width:780px;font-size:14.5px;line-height:1.7;color:var(--muted);margin-bottom:25px}
+.research-past-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.research-past-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:23px 24px;min-width:0;display:flex;flex-direction:column}
+.research-past-category{display:block;font:700 11px/1.25 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--purple-700);margin-bottom:11px}
+.research-past-card h3{font-size:16.5px;line-height:1.4;margin-bottom:9px}
+.research-past-card p{font-size:13.5px;line-height:1.7;color:var(--muted);margin-bottom:17px;flex:1}
+.research-past-card a{font-size:12.5px;color:var(--purple-700);font-weight:700;align-self:flex-start}
+.research-past-card a:hover{text-decoration:underline}
+@media (max-width:1150px){
+ .research-category-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:680px){
+ .research-portfolio{padding-top:48px}
+ .research-category-nav{grid-template-columns:1fr;gap:8px;margin-top:24px}
+ .research-category-nav a{min-height:50px}
+ .research-area{padding:46px 0 48px}
+ .research-area-head{grid-template-columns:67px minmax(0,1fr);gap:14px}
+ .research-area-icon{width:67px;height:67px;border-radius:13px}
+ .research-area-papers{grid-column:2;justify-self:start;margin-top:-5px}
+ .research-project-grid,.research-past-grid{grid-template-columns:1fr}
+ .research-project-card{min-height:0;padding:22px 20px}
+ .research-past-section{padding:34px 20px 37px}
+ /* Keep the existing orbit intact on desktop, but make all four pillar links usable on phones. */
+ .orbit-wrap{width:100%;max-width:350px;height:430px;aspect-ratio:auto}
+ .orbit-ring,.orbit-glow,.orbit-core{top:36%}
+ .orbit-core{width:39%;height:auto;aspect-ratio:1/1}
+ .orbit-ring.r1{width:275px;height:275px}
+ .orbit-ring.r2{width:190px;height:190px}
+ .orbit-spokes i{top:36%}
+ .orbit-spin{animation:none;position:absolute;inset:auto 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .orbit-node{position:static;transform:none}
+ .orbit-node .counter-spin{animation:none}
+ .orbit-node a{height:100%;min-height:44px;white-space:normal;justify-content:center;gap:6px;padding:8px 7px;text-align:center}
+ .orbit-node strong{font-size:11px;line-height:1.25}
+ .orbit-node .no{font-size:10px}
+}
 
 /* ---------- 10. AWARDS & GRANTS ---------- */
 .grant-group + .grant-group{margin-top:44px}
@@ -267,6 +363,11 @@ main{flex:1}
 .empty-state.show{display:block}
 
 /* ---------- 12. TEAM ---------- */
+/* Match the lab-director card's rounded outline; avoid a full-width square lavender block. */
+.team-collaborators{padding:32px;background:linear-gradient(135deg,var(--soft) 0%,#fff 100%);border:2px solid var(--purple-600);border-radius:18px}
+.team-collaborators .roster-lede{font-size:16px;line-height:1.7;margin-bottom:25px}
+.team-collaborators .collab-grid{margin-top:0;gap:18px}
+.team-collaborators .collab-card{background:rgba(255,255,255,.84)}
 .director-card{display:grid;grid-template-columns:260px 1fr;gap:40px;background:linear-gradient(135deg,var(--soft) 0%,#fff 100%);border:2px solid var(--purple-600);border-radius:18px;padding:32px;margin-bottom:8px}
 .director-card .photo-frame{width:100%;aspect-ratio:1/1.15;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md)}
 .director-card .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -302,6 +403,11 @@ main{flex:1}
 .roster-card h4{font-size:15px;margin:0 0 2px}
 .roster-card .role{color:var(--purple-700);font-weight:700;font-size:11.5px;display:block;margin-bottom:6px}
 .roster-card p{color:var(--muted);font-size:12.5px;margin-bottom:10px;line-height:1.55}
+/* Graduate profiles share the roster design but use restrained, fixed-size photos. */
+.roster-grid.roster-grid--graduate{grid-template-columns:repeat(2,minmax(0,1fr))}
+.roster-card--graduate{display:grid;grid-template-columns:142px minmax(0,1fr);align-items:start;gap:0;background:#fff}
+.roster-card--graduate .avatar,.roster-card--graduate .avatar-placeholder{width:124px;height:124px;aspect-ratio:1;object-fit:cover;border-radius:10px;margin:18px 0 18px 18px}
+.roster-card--graduate .card-body{padding:20px 17px 20px 19px;min-width:0}
 
 .roster-list{display:flex;flex-direction:column}
 .roster-row{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
@@ -369,7 +475,11 @@ main{flex:1}
 .site-footer a{color:var(--purple-700);font-weight:600}
 
 /* ---------- 19. RESPONSIVE ---------- */
+@media (max-width:1200px){
+  .roster-grid.roster-grid--graduate{grid-template-columns:1fr}
+}
 @media (max-width:1080px){
+  .orbit-section--research .orbit-copy .lede{max-width:700px}
   .orbit-layout,.intro-grid,.theme-body{grid-template-columns:1fr;gap:36px}
   .theme-block-head{grid-template-columns:120px 1fr}
   .theme-figure{width:120px;height:120px}
@@ -391,6 +501,12 @@ main{flex:1}
   .page-wrap{width:calc(100% - 40px)}
 }
 @media (max-width:760px){
+  .orbit-section--research{margin-top:30px}
+  .orbit-section--research .orbit-copy .lede{font-size:15.5px;line-height:1.65}
+  .research-pathway{gap:8px;margin-top:25px;padding-top:22px}
+  .research-pathway-step strong{font-size:13px}
+  .research-pathway-step>span:last-child{font-size:10px}
+  .team-collaborators{padding:24px 19px}
   .section{padding:44px 0}
   .pillar-grid,.roster-grid{grid-template-columns:1fr}
   .collab-grid{grid-template-columns:1fr}
@@ -408,6 +524,11 @@ main{flex:1}
   .site-footer{padding:22px 24px;flex-direction:column}
   .banner{min-height:200px}
   .banner--home{min-height:260px}
+}
+@media (max-width:520px){
+  .roster-card--graduate{grid-template-columns:1fr}
+  .roster-card--graduate .avatar,.roster-card--graduate .avatar-placeholder{width:124px;height:124px;margin:18px 0 0 18px}
+  .roster-card--graduate .card-body{padding:17px 18px 20px}
 }
 @media print{
   .sidebar,.topnav,.sidebar-toggle,.hero-canvas{display:none!important}
