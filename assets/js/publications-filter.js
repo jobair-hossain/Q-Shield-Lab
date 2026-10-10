@@ -13,6 +13,8 @@
   function applyTopicFromQuery() {
     var params = new URLSearchParams(window.location.search);
     var topic = params.get('topic');
+    var query = params.get('q');
+    if (query && searchInput) searchInput.value = query;
     if (topic && topicSelect) {
       var opt = Array.prototype.find.call(topicSelect.options, function (o) {
         return o.value.toLowerCase() === topic.toLowerCase();

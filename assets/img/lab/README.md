@@ -1,16 +1,28 @@
-# Homepage slideshow photos
+# Q-SHIELD Lab homepage photographs
 
-This directory holds **real Q-SHIELD Lab photos**. None have been added yet.
-Your existing portrait (`assets/img/director.jpg`) remains the first slide.
+This folder contains real Q-SHIELD Lab photographs used in the **homepage slideshow** in `index.html`. The slideshow is part of the existing homepage introduction, not a separate gallery page.
 
-## Add lab photos
+## Current active photographs
 
-1. Save your photos here. For example: `research-group.jpg`, `student-showcase.jpg`.
-2. Open **index.html** and find `HOME PHOTO SLIDESHOW`.
-3. Inside `.lab-slideshow`, copy a `<figure class="lab-slide"> ... </figure>` block from the commented examples, then paste it **outside the HTML comment** (before `lab-slideshow-controls`).
-4. Update each photo's `src`, meaningful `alt` description, and caption.
-5. Commit the changes. With two or more real photos, the gallery automatically displays arrows, navigation dots, pause/play, and a gentle 6.5-second rotation.
+The current slideshow uses six compressed `.webp` display copies for Kody and Aiden's IEEE SSCET presentations, an elementary-school STEM visit, the NAIRR classroom conference, IEEE ICHI 2026, and the COSE student research symposium. Original `.JPG`, `.jpg`, and `.jpeg` photographs are retained beside these files, and additional original photographs (such as `IMG_7751.jpg`) are intentionally preserved.
 
-**Image guidance:** use landscape photographs cropped to roughly **4:3**, ideally at least **1200 x 900 pixels**, and compress to a web-friendly size (ideally under 400 KB per photo). Photos must be yours or cleared for website use. Avoid showing student names or sensitive information without consent. Images can be .jpg, .png, or .webp. Consider showing lab meetings, student demos, research presentations, workshops, and group photos.
+## Adding a photograph
 
-The slideshow stays in the existing homepage portrait position. If no additional photos are present, it displays your portrait without arrows or an unnecessary animation. Users who prefer reduced motion will see manual navigation but no automatic transitions.
+1. Save the original photograph in this folder.
+2. Create a display-sized `.webp` copy, preferably around 1200–1440 px wide and under 400 KB, without deleting your original image.
+3. Open `index.html` and locate `HOME PHOTO SLIDESHOW`.
+4. Add a `<figure class="lab-slide">` element before `.lab-slideshow-controls`, or uncomment an existing figure. Set the `img src` to the actual, case-sensitive WebP filename.
+5. Supply descriptive `alt` text and a short two-line caption using `.lab-slide-overline` and `.lab-slide-caption`.
+6. If the slide should appear first, move it to the first *active* figure, add `is-active`, and use `loading="eager"`. Remove `is-active` from every other active figure. Subsequent images should use `loading="lazy"`.
+
+**Preserve the commented-out director portrait and student award slides** until you choose to activate them. HTML comments are deliberately ignored by the slideshow script.
+
+At least two active figures enable navigation arrows, dot indicators, pause/play, and automatic transitions approximately every 6.5 seconds. The script respects reduced-motion preferences and pauses on keyboard focus or mouse hover.
+
+## Publishing and image troubleshooting
+
+- Match directory names and filename capitalization exactly. `photo.JPG` and `photo.jpg` are different filenames on GitHub Pages.
+- Use `assets/img/lab/photo.webp` in `index.html`, not just the image name.
+- Test the complete relative URL directly if an image does not load. The browser developer console can show `404` failures.
+- Do not publicly post photographs of children without appropriate guardian/school permission or other required authorization. Obtain appropriate consent for identifiable students and conference attendees, and check that images do not show private information.
+- Keep high-resolution originals if useful for future printing or replacement, but serve compressed copies to web visitors.

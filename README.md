@@ -1,17 +1,17 @@
 # Q-SHIELD Lab Website
 
-Website for the **Quantum and Software for Health Informatics and Emerging Defense (Q-SHIELD) Lab**, Department of Computer Science and Engineering, **University of Central Arkansas (UCA)**.
+Website for the **Quantum and Software for Health Informatics and Emerging Layered Defense (Q-SHIELD) Lab**, Department of Computer Science and Engineering, **University of Central Arkansas (UCA)**.
 
 Q-SHIELD conducts research at the intersection of artificial intelligence, quantum machine learning, health informatics, cybersecurity, and software engineering. This repository contains the lab's public-facing academic website.
 
-**Website:** [Q-SHIELD Lab](https://jobair-hossain.github.io/Q-Shield-Lab2/)  
+**Website:** [Q-SHIELD Lab](https://jobair-hossain.github.io/Q-Shield-Lab/)  
 **Host institution:** [University of Central Arkansas](https://uca.edu/)
 
 ## About this website
 
 The site uses **HTML, CSS, and vanilla JavaScript**. No frontend framework, package installation, build process, or database is required. It can be hosted directly on GitHub Pages.
 
-The layout includes a persistent sidebar with contact and institutional information, a responsive navigation bar, and page-specific content. The visual design uses UCA-inspired purple tones and a quantum-themed animated banner.
+The layout includes a persistent sidebar with a map and institutional information, a responsive navigation bar, and page-specific content. The visual design uses UCA-inspired purple tones and a quantum-themed animated banner.
 
 ### Pages
 
@@ -19,13 +19,14 @@ The layout includes a persistent sidebar with contact and institutional informat
 | --- | --- |
 | `index.html` | Lab introduction, homepage photo slideshow, and latest updates |
 | `research.html` | Interactive **Research to Impact** diagram, selected research projects across four areas, and selected completed projects |
-| `awards.html` | Federal and university research grants and proposal information, with funding status shown for each entry |
+| `awards.html` | Funded research, submitted proposals, and Q-SHIELD-related honors since August 2025 |
 | `publications.html` | Searchable and filterable publication list organized by research area and year |
 | `teaching.html` | Courses taught, scheduled courses, and faculty development workshops |
 | `team.html` | Lab director, collaborators, graduate students, undergraduate students, and alumni |
 | `join.html` | Research opportunities, qualifications, and application information |
 | `resources.html` | Quantum/AI development tools and open-source research resources |
-| `events.html` | Conferences, research presentations, workshops, and outreach activities |
+| `contact.html` | Lab contact details, office location, academic collaborations, and research inquiries |
+| `events.html` | Historical events page retained in the repository; navigation entry commented out |
 
 The four main research areas are **Health Informatics, Quantum AI, Cybersecurity, and Software Engineering**. Quantum AI includes cross-cutting methods, while the other areas highlight applications and systems research.
 
@@ -55,6 +56,7 @@ A local web server more closely resembles GitHub Pages, although external resour
 ├── team.html
 ├── join.html
 ├── resources.html
+├── contact.html
 ├── events.html
 ├── README.md
 └── assets/
@@ -90,8 +92,9 @@ Most content is edited directly in its corresponding HTML file. Preserve the exi
 | Add a course | `teaching.html` | Copy a `.course-card`; distinguish **Semesters Taught** from **Scheduled Semester** |
 | Add a collaborator | `team.html` | Follow the `.collab-card` structure and add the matching portrait to `assets/img/people/` |
 | Add a student | `team.html` | Use the existing `.roster-card` or `.roster-row` in the appropriate graduate, undergraduate, or alumni group |
-| Add an event | `events.html` | Copy an `.event-card` into the relevant `.event-group` |
+| Add an event | `events.html` | Archived page; copy an `.event-card` and restore the navigation link only if you decide to display Events again |
 | Update recruitment details | `join.html` | Revise eligibility, research interests, and application instructions |
+| Update contact details | `contact.html` | Update the office location, email, and research-inquiry text |
 | Update resources | `resources.html` | Edit the relevant tools or repository links |
 
 ### Publication filtering
@@ -123,7 +126,7 @@ The homepage slideshow occupies the original portrait position in `index.html`; 
 
 To add or update photographs:
 
-1. Put the actual image file in `assets/img/lab/`.
+1. Put the original photograph in `assets/img/lab/` and prepare a compressed WebP display copy (e.g., `student-presentation.webp`).
 2. Open `index.html` and find the comment `HOME PHOTO SLIDESHOW`.
 3. Inside `.lab-slideshow`, add an active `<figure class="lab-slide">` before `.lab-slideshow-controls`.
 4. Set the image `src` to the **exact** filename and location, and write accurate alternative text and a concise caption.
@@ -133,7 +136,7 @@ Example:
 
 ```html
 <figure class="lab-slide" role="group" aria-roledescription="slide">
-  <img src="assets/img/lab/student-presentation.jpg"
+  <img src="assets/img/lab/student-presentation.webp"
        alt="Q-SHIELD student presenting research at a conference"
        loading="lazy" decoding="async">
   <figcaption>
@@ -172,13 +175,13 @@ Interactive components include reduced-motion support where applicable. Preserve
 
 ### University affiliation
 
-All nine pages display a **Host Institution** panel in the sidebar, beneath the Website and ORCID links. It references the UCA academic logo hosted on `uca.edu` and links to the university's homepage. A text fallback is included in the markup.
+The sidebar on every page emphasizes the **Q-SHIELD** acronym within the full lab name, using bold, underlined initials. The extra spacing above the institution panel separates it from the contact buttons. All ten pages display a **Host Institution** panel in the sidebar, beneath the Website and ORCID links. It references the UCA academic logo hosted on `uca.edu` and links to the university's homepage. A text fallback is included in the markup.
 
-If replacing the remote image with a locally hosted version, use an **approved UCA logo asset**, maintain its original proportions and clear space, and update the image path consistently in all nine HTML files. Do not redraw or alter the official university mark.
+If replacing the remote image with a locally hosted version, use an **approved UCA logo asset**, maintain its original proportions and clear space, and update the image path consistently in all ten HTML files. Do not redraw or alter the official university mark.
 
 ### Contact details and navigation
 
-The sidebar and top navigation are repeated in every HTML page. If the lab name, contact email, address, institutional logo path, or navigation items change, update **all nine pages** to keep the interface consistent.
+The sidebar and top navigation are repeated in every HTML page. The **Events** and **Contact** menu links are deliberately kept in HTML comments, while `events.html` and `contact.html` remain available for possible future reuse. Their corresponding footer Contact links are also commented out. The sidebar shows an embedded Google Map for 2199-2217 Bruce St, Conway, AR 72034, without a separate street-address block. The lab office is MCS 321, listed on the Contact page. If the lab name, contact email, address, institutional logo path, or navigation items change, update **all ten pages** to keep the interface consistent.
 
 ## Publishing with GitHub Pages
 
@@ -187,7 +190,7 @@ The sidebar and top navigation are repeated in every HTML page. If the lab name,
 3. Confirm that the site's published base path matches the repository name.
 4. Check the canonical URL in each page's `<head>`; the current HTML is configured for:
 
-   `https://jobair-hossain.github.io/Q-Shield-Lab2/`
+   `https://jobair-hossain.github.io/Q-Shield-Lab/`
 
 5. After deployment, inspect Home, Research, Publications, Teaching, and Team on desktop and mobile, then verify navigation, downloadable assets, images, and external links.
 
@@ -207,3 +210,22 @@ If the repository is renamed or moved, update canonical URLs and any absolute li
 ## Maintenance
 
 This README documents the website's structure and editing workflow as of **October 2026**. Update it when the page structure, asset locations, interactive scripts, or publication process changes. Routine content edits generally do not require a README revision unless they change these instructions.
+
+
+## October 2026 research and content update
+
+- **Canonical URLs:** All nine pages use the GitHub Pages path `/Q-Shield-Lab/`.
+- **Homepage:** Research introduction is concise; the full Latest Updates list is preserved with clearer headlines. The Kody presentation photo is first, and its image is loaded eagerly. Commented-out director/award photo blocks are retained for future use.
+- **Research:** Selected projects present an explicit research question, approach, and research output. Linked evidence leads to filtered publication search; planned work remains labeled as such.
+- **Publications:** Verified paper DOI links are provided where available, with Google Scholar title-search links as a fallback. Filters accept `?q=<search>` and `?topic=<pillar>`.
+- **Awards:** Funded activities, submitted proposals, and post-August-2025 lab-related honors are separated. Requested funding is never represented as awarded funding.
+- **Join:** Undergraduate and graduate preparation and application materials are distinguished; research collaboration is not advertised as a guaranteed paid opening.
+- **Teaching:** The original course-card design and user-selected course listing have been preserved. Cloud Computing has **not** been added.
+
+### Publication verification note
+
+Google Scholar restricted automated access to the author's profile during this update. Publication years and links were checked against the supplied academic CV and selected publisher/institutional records. Google Scholar fallback links are title searches, not verified direct links to a full-text article. Audit remaining entries manually when complete Scholar access is available.
+
+### Slideshow image performance
+
+Active homepage photographs use compressed WebP derivatives (approximately 1440 px maximum width) to reduce transfer size. The original JPEG files remain in `assets/img/lab/` for archival purposes and manual replacement. When adding a new photo, optimize a WebP display copy and use its exact, case-sensitive path in `index.html`. Keep commented-out future slide blocks untouched until their images are ready.
