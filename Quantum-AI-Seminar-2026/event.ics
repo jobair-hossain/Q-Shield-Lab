@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Q-SHIELD Lab//Quantum-AI Seminar on Cybersecurity//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:uca-qshield-quantum-ai-20261102@jobair-hossain.github.io
+DTSTAMP:20261016T120000Z
+DTSTART:20261102T160000Z
+DTEND:20261102T200000Z
+SUMMARY:UCA Quantum-AI Seminar on Cybersecurity
+LOCATION:DHSC 141 Auditorium\, Doyne Health Science Center\, University of Central Arkansas\, Conway\, AR
+DESCRIPTION:Four invited research talks on quantum foundations\, quantum machine learning\, explainable and adaptive AI\, and cybersecurity. Free admission. Refreshments provided. Contact: mhossainfaruk@uca.edu. See the event website for speaker abstracts and RSVP information.
+END:VEVENT
+END:VCALENDAR

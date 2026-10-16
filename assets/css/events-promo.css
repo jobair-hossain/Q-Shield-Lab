@@ -1,0 +1,17 @@
+/* Featured seminar card on Q-SHIELD's existing events.html. No other pages affected. */
+.featured-seminar{display:grid;grid-template-columns:minmax(225px,.8fr) minmax(0,1.7fr);align-items:center;min-height:315px;margin:38px 0 20px;border-radius:20px;overflow:hidden;background:linear-gradient(115deg,#211238 0%,#45236c 55%,#2a1547 100%);box-shadow:0 20px 50px -24px rgba(39,15,66,.55);border:1px solid rgba(231,200,126,.36);color:white;position:relative}
+.featured-seminar::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 50%,rgba(164,117,219,.17),transparent 48%),linear-gradient(140deg,transparent 70%,rgba(243,205,132,.07));}
+.featured-seminar__visual{position:relative;display:flex;align-items:center;justify-content:center;padding:12px 4px 10px 16px}
+.featured-seminar__visual svg{max-height:284px;max-width:100%;filter:drop-shadow(0 16px 25px rgba(0,0,0,.22))}
+.featured-seminar__content{position:relative;padding:30px 34px 32px 2px}
+.featured-seminar__eyebrow{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:800;color:#f1d28a;margin-bottom:10px}
+.featured-seminar h2{font-size:clamp(24px,2.8vw,34px);line-height:1.2;color:#fff;max-width:680px;margin-bottom:12px}
+.featured-seminar__intro{font-size:14px;line-height:1.7;color:#e6ddf0;max-width:600px;margin-bottom:16px}
+.featured-seminar__facts{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.featured-seminar__facts span{border:1px solid rgba(237,218,255,.25);background:rgba(255,255,255,.075);padding:5px 10px;border-radius:40px;color:#faf3ff;font-size:11px;font-weight:600}
+.featured-seminar__button{display:inline-flex;align-items:center;gap:12px;background:#f4d182;color:#2a1840;border-radius:9px;padding:12px 18px;font-size:13px;font-weight:800;line-height:1.4;transition:background .2s,transform .2s,box-shadow .2s}
+.featured-seminar__button:hover{background:#ffe4a4;transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.featured-seminar__button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:840px){.featured-seminar{grid-template-columns:minmax(145px,.65fr) minmax(0,1.7fr)}.featured-seminar__content{padding:26px 22px 28px 0}}
+@media(max-width:570px){.featured-seminar{grid-template-columns:1fr}.featured-seminar__visual{padding:10px 10px 0}.featured-seminar__visual svg{height:165px}.featured-seminar__content{padding:3px 22px 27px}.featured-seminar h2{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.featured-seminar__button{transition:none}}

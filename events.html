@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/events-promo.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,7 +62,7 @@
       <a href="join.html">Join Us</a>
       <a href="resources.html">Resources</a>
       <!-- <a href="contact.html">Contact</a> -->
-      <!-- <a href="events.html" aria-current="page">Events</a> -->
+      <a href="events.html" aria-current="page">Events</a>
     </nav>
 
     <header class="banner">
@@ -74,6 +75,37 @@
 
     <main id="main">
       <div class="page-wrap">
+
+        <!-- Featured upcoming seminar: dedicated event page -->
+        <section class="featured-seminar" aria-labelledby="seminar-feature-title">
+          <div class="featured-seminar__visual" aria-hidden="true">
+            <svg viewBox="0 0 300 280" role="presentation" focusable="false">
+              <defs><linearGradient id="gold-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fce5a9"/><stop offset="1" stop-color="#c59938"/></linearGradient></defs>
+              <circle cx="148" cy="133" r="115" fill="none" stroke="#e4cb91" stroke-opacity=".24" stroke-dasharray="3 9"/>
+              <ellipse cx="148" cy="133" rx="124" ry="42" transform="rotate(-29 148 133)" fill="none" stroke="#edd18b" stroke-width="2"/>
+              <ellipse cx="148" cy="133" rx="120" ry="42" transform="rotate(34 148 133)" fill="none" stroke="#ad8cdf" stroke-width="2"/>
+              <path d="M148 41 C185 60 221 65 234 65 V139 C234 197 196 230 148 254 C100 230 62 197 62 139 V65 C75 65 111 60 148 41Z" fill="#281644" fill-opacity=".92" stroke="url(#gold-edge)" stroke-width="4"/>
+              <circle cx="148" cy="140" r="65" fill="none" stroke="#f3e8fd" stroke-width="2"/>
+              <ellipse cx="148" cy="140" rx="65" ry="24" fill="none" stroke="#e0c8ef" stroke-width="1.5"/>
+              <path d="M148 75 V205 M83 140 H213" stroke="#e0c8ef" stroke-dasharray="4 6"/>
+              <path d="M148 140 L181 104" stroke="#f2cf7d" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="181" cy="104" r="5" fill="#f2cf7d"/><circle cx="43" cy="111" r="6" fill="#f2cf7d"/><circle cx="259" cy="146" r="6" fill="#b89eec"/>
+            </svg>
+          </div>
+          <div class="featured-seminar__content">
+            <span class="featured-seminar__eyebrow">Featured academic event · November 2, 2026</span>
+            <h2 id="seminar-feature-title">Quantum-AI Seminar on Cybersecurity</h2>
+            <p class="featured-seminar__intro">Four invited faculty talks connecting quantum entanglement, quantum machine learning, explainable and adaptive AI, and cybersecurity research.</p>
+            <div class="featured-seminar__facts">
+              <span>Monday, November 2</span>
+              <span>10:00 AM–2:00 PM</span>
+              <span>DHSC 141 Auditorium, UCA</span>
+              <span>Free admission</span>
+            </div>
+            <a class="featured-seminar__button" href="Quantum-AI-Seminar-2026/">Explore seminar, speakers &amp; abstracts <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
         <section class="section reveal">
 
           <div class="event-group">
