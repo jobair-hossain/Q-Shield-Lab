@@ -1,324 +1,864 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="theme-color" content="#291540">
+
   <link rel="canonical" href="https://jobair-hossain.github.io/Q-Shield-Lab/Quantum-AI-Seminar-2026/">
+
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+
   <meta name="description" content="Quantum-AI Seminar on Cybersecurity at the University of Central Arkansas, November 2, 2026. Four invited talks on quantum foundations, quantum machine learning, trustworthy AI, and cybersecurity.">
+
   <title>Quantum-AI Seminar on Cybersecurity | UCA Q-SHIELD Lab</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
+
     :root{--deep:#20112f;--deep2:#301845;--purple:#4d287d;--violet:#7551a6;--gold:#f0c96b;--gold2:#d9ac3f;--ink:#231b32;--muted:#635c6e;--paper:#f8f7fa;--stroke:#e4dfea;--white:#fff;--shadow:0 18px 50px rgba(28,16,50,.10)}
+
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;color:var(--ink);background:var(--paper);font:400 16px/1.65 'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}button{font:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 32px}.skip-link{position:absolute;top:-80px;left:15px;background:#fff;color:#24143a;padding:12px;z-index:100}.skip-link:focus{top:12px}.serif{font-family:'Playfair Display',Georgia,serif}h1,h2,h3,p{margin-top:0}h2{font-family:'Playfair Display',Georgia,serif;letter-spacing:-.028em;font-weight:600;font-size:clamp(29px,3.5vw,46px);line-height:1.2}h3{font-family:'Outfit',sans-serif}::selection{background:#e2ceff;color:#220c38}
+
     .nav{height:76px;background:rgba(255,255,255,.97);border-bottom:1px solid #ebe5ee;position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{text-decoration:none;display:flex;align-items:center;gap:14px;min-width:0}.brand-mark{display:grid;place-items:center;width:43px;height:43px;background:var(--purple);color:#fff;font:700 14px/1 'Outfit',sans-serif;letter-spacing:.06em;border:2px solid var(--gold);border-radius:12px;flex-shrink:0}.brand-copy{display:flex;flex-direction:column;line-height:1.2}.brand-copy strong{font:700 15px 'Outfit',sans-serif;letter-spacing:.02em}.brand-copy span{font-size:11px;letter-spacing:.065em;color:var(--muted);font-weight:700;text-transform:uppercase;margin-top:4px}.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{font-size:13px;font-weight:700;text-decoration:none;color:#463a55;transition:color .2s}.nav-links a:hover{color:var(--purple)}.nav-register{padding:10px 18px;border-radius:8px;background:var(--purple);color:#fff!important;white-space:nowrap}.nav-register:hover{background:#311852}
+
     .hero{position:relative;background:radial-gradient(ellipse at 78% 36%,rgba(117,69,176,.46),transparent 42%),linear-gradient(117deg,#21112f 12%,#33174b 55%,#231335 100%);color:#fff;overflow:hidden}.hero:after{content:"";position:absolute;inset:0;opacity:.30;pointer-events:none;background-image:radial-gradient(#bfa9e0 0.8px,transparent 0.8px);background-size:23px 23px;mask-image:linear-gradient(to left,#000,transparent 56%)}.hero-inner{min-height:580px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:32px;padding-top:86px;padding-bottom:115px;position:relative;z-index:2}.eyebrow{color:var(--gold);font:700 12px/1.4 'Outfit',sans-serif;text-transform:uppercase;letter-spacing:.20em;display:flex;align-items:center;gap:14px}.eyebrow:before{content:"";display:inline-block;height:2px;width:32px;background:var(--gold)}.hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.065;letter-spacing:-.047em;font-size:clamp(50px,5.5vw,78px);margin:24px 0 20px;max-width:715px}.hero h1 em{font-style:normal;color:var(--gold);display:block}.hero-lede{max-width:560px;color:#ddd2e9;font-size:17px;line-height:1.7;margin-bottom:30px}.hero-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:15px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;font:700 14px 'Outfit',sans-serif;padding:14px 22px;border-radius:9px;text-decoration:none;transition:transform .18s,background .18s,border .18s;border:1px solid transparent}.btn:hover{transform:translateY(-2px)}.btn-gold{background:var(--gold);color:#211332}.btn-gold:hover{background:#ffdb8a}.btn-outline{border:1px solid #826d99;background:rgba(255,255,255,.03);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.1)}.hero-note{margin-top:24px;color:#c8b9d4;font-size:12px;letter-spacing:.03em}.hero-art{max-width:500px;width:100%;justify-self:end;filter:drop-shadow(0 0 34px rgba(242,202,105,.14))}.hero-art svg{width:100%;height:auto;display:block}.hero-svg-ring{transform-origin:250px 250px;animation:orbital 38s linear infinite}@keyframes orbital{to{transform:rotate(360deg)}}
+
     .meta-rail{position:relative;z-index:5;margin-top:-62px}.meta-grid{display:grid;grid-template-columns:1fr 1fr 1.25fr 1fr;box-shadow:var(--shadow);background:#fff;border:1px solid #eee8ef;border-radius:16px;overflow:hidden}.meta-cell{padding:24px 25px;position:relative}.meta-cell+.meta-cell:before{content:"";height:60%;width:1px;background:#e7e1eb;position:absolute;left:0;top:20%}.meta-label{font:800 11px 'Outfit',sans-serif;color:var(--purple);letter-spacing:.16em;text-transform:uppercase;margin-bottom:7px}.meta-value{font:700 17px/1.35 'Outfit',sans-serif;color:#2a1d38}.meta-sub{font:500 12px/1.5 'DM Sans',sans-serif;color:#766b81;margin-top:5px}
+
     main section{scroll-margin-top:110px}.section{padding:100px 0}.section-eyebrow{font:800 11px 'Outfit',sans-serif;letter-spacing:.18em;color:var(--purple);text-transform:uppercase;margin:0 0 13px}.section-intro{max-width:750px;color:var(--muted);font-size:16px;line-height:1.8}.overview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start}.overview-copy p{line-height:1.9;color:#4c4357;font-size:16px}.topic-board{background:#fff;padding:30px;border:1px solid var(--stroke);border-radius:18px;box-shadow:0 12px 32px rgba(47,22,74,.05)}.topic-board h3{margin:0 0 21px;font-size:19px}.topic-item{display:flex;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid #eee9f0}.topic-item:last-child{border-bottom:0;padding-bottom:0}.topic-num{font:800 12px 'Outfit',sans-serif;color:#8c6215;width:24px;padding-top:2px}.topic-item strong{display:block;font-size:14px;margin-bottom:3px}.topic-item small{display:block;font-size:13px;color:#777080;line-height:1.45}.intro-note{border-left:3px solid var(--gold2);padding:14px 18px;background:#f2ecf8;color:var(--purple);border-radius:0 9px 9px 0;margin-top:25px;font-weight:600;font-size:13px}
+
     .speakers-section{background:#f1eef5;border-top:1px solid #e8e2ee;border-bottom:1px solid #e8e2ee}.section-header{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}.section-header h2{margin-bottom:0}.section-caption{color:#7d7288;font-size:13px;max-width:320px}.speaker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.speaker-card{background:#fff;border:1px solid #e8e2eb;border-radius:16px;overflow:hidden;box-shadow:0 7px 22px rgba(39,18,62,.05);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}.speaker-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(39,18,62,.10)}.speaker-art{height:154px;background:radial-gradient(circle at 75% 30%,rgba(195,153,243,.30),transparent 45%),linear-gradient(132deg,#301848,#5a3582);display:flex;align-items:center;justify-content:space-between;padding:25px;position:relative;overflow:hidden;color:var(--gold)}.speaker-art:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ceb7dd 0.85px,transparent 0.85px);background-size:20px 20px;opacity:.13}.speaker-art .initials{font:600 55px 'Playfair Display',serif;opacity:.2;color:#fff;position:absolute;right:20px;bottom:3px}.speaker-art svg{height:70px;width:70px;stroke:currentColor;position:relative;z-index:1;fill:none;stroke-width:1.3}.speaker-topic{font:800 10px 'Outfit',sans-serif;text-transform:uppercase;letter-spacing:.10em;color:#745125;margin-bottom:14px}.speaker-details{padding:25px 22px 23px;flex:1;display:flex;flex-direction:column}.speaker-details h3{font-size:22px;line-height:1.25;letter-spacing:-.035em;margin-bottom:9px;color:#261836}.speaker-rank{font-size:12px;color:var(--purple);font-weight:800;margin:0 0 7px}.speaker-inst{font-size:13px;color:#6b6274;line-height:1.5;margin:0 0 21px}.speaker-link{border-top:1px solid #f0eaf3;padding-top:15px;margin-top:auto;font:800 13px 'Outfit',sans-serif;text-decoration:none;color:var(--purple)}.speaker-link span{float:right}
+
     .talks-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:35px}.talk{background:#fff;border-radius:16px;border:1px solid var(--stroke);padding:32px;box-shadow:0 8px 26px rgba(45,21,74,.035);display:flex;flex-direction:column}.talk-number{font:800 12px 'Outfit',sans-serif;color:#8e72aa;letter-spacing:.15em;margin-bottom:14px}.talk h3{font:600 25px/1.28 'Playfair Display',Georgia,serif;letter-spacing:-.025em;color:#29173c;margin-bottom:11px}.talk-presenter{font-size:13px;font-weight:800;color:#6d4a96;margin-bottom:21px}.talk p{color:#544b5e;font-size:14px;line-height:1.8}.talk details{border-top:1px solid #eee7f2;margin-top:auto;padding-top:18px}.talk summary{font:800 13px 'Outfit',sans-serif;color:var(--purple);cursor:pointer;list-style:none;display:flex;justify-content:space-between}.talk summary::-webkit-details-marker{display:none}.talk summary:after{content:'+';font-size:19px;line-height:1}.talk details[open] summary:after{content:'−'}.talk details .full{margin-top:17px;padding-top:15px;border-top:1px dashed #e7dceb}.talk details .full p:last-child{margin-bottom:0}.keyword-list{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}.keyword-list span{background:#f3edf8;color:#624b80;font:700 11px 'Outfit',sans-serif;padding:6px 9px;border-radius:6px}.awaiting{padding:12px 14px;border-radius:8px;background:#faf7ef;font-size:13px;color:#71542a;margin-top:auto}
+
     .program{background:var(--deep);color:#fff;position:relative;overflow:hidden}.program:before{content:"";position:absolute;top:-240px;right:-140px;width:530px;height:530px;border:1px solid #6d5187;border-radius:50%;box-shadow:0 0 0 65px rgba(127,98,156,.07),0 0 0 130px rgba(127,98,156,.035)}.program .section-eyebrow{color:var(--gold)}.program h2{max-width:620px}.program-copy{color:#c6b9cf;max-width:700px}.program-grid{margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px;position:relative}.program-step{border:1px solid #5d436e;background:rgba(255,255,255,.035);border-radius:14px;padding:25px 21px;min-height:170px}.program-step small{color:var(--gold);font:800 12px 'Outfit',sans-serif;letter-spacing:.12em}.program-step strong{display:block;font:700 18px/1.35 'Outfit',sans-serif;margin:14px 0 8px}.program-step p{color:#bfb0cb;font-size:13px;line-height:1.6;margin:0}.program-note{font-size:12px;color:#ac9eb9;margin:21px 0 0}
+
     .attend-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}.attend-card{border:1px solid var(--stroke);border-radius:17px;background:#fff;padding:36px;box-shadow:0 12px 32px rgba(43,21,67,.05)}.attend-card h3{font-size:26px;margin-bottom:16px}.attend-card p{color:#665c71;line-height:1.8}.attend-card .btn{margin-top:12px}.venue-facts{display:grid;gap:15px;margin:25px 0}.venue-facts div{border-left:3px solid var(--gold2);padding-left:15px}.venue-facts strong{display:block;font:800 12px 'Outfit',sans-serif;color:var(--purple);text-transform:uppercase;letter-spacing:.08em}.venue-facts span{display:block;margin-top:5px;font-size:14px}.rsvp-card{background:linear-gradient(150deg,#f8f2ff,#fff)}.rsvp-status{display:inline-flex;align-items:center;gap:7px;background:#f1e8fa;color:var(--purple);border-radius:20px;padding:7px 12px;font:800 11px 'Outfit',sans-serif;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}.dot{width:7px;height:7px;border-radius:100%;background:#916ab7;display:inline-block}.registration-help{font-size:12px!important;margin-top:15px}.rsvp-primary{display:none}.rsvp-fallback{display:inline-flex}
+
     .organizer{background:#ebe5f1}.organizer-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px}.organizer h2{margin-bottom:18px}.organizer p{color:#594e63}.org-lockup{background:#fff;border:1px solid #e0d7e9;border-radius:17px;padding:30px;display:flex;gap:20px;align-items:center}.org-monogram{border-radius:12px;background:var(--purple);color:var(--gold);padding:17px;font:800 18px 'Outfit',sans-serif;border:2px solid var(--gold2);white-space:nowrap}.org-lockup strong{font:700 19px 'Outfit',sans-serif;color:#261a38;display:block}.org-lockup small{display:block;color:#62576c;margin-top:5px;font-size:12px;line-height:1.7}.faculty-team{display:grid;gap:7px;font-size:12px;color:#60576a;border-left:3px solid var(--gold2);padding-left:16px;margin:20px 0}.faculty-team strong{font:800 13px 'Outfit',sans-serif;color:var(--purple)}.contact-inline a{color:var(--purple);font-weight:700;text-decoration:none}.contact-inline a:hover{text-decoration:underline}
+
     .footer{background:#1c1027;color:#c4b4d1;padding:31px 0;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer a{color:#e9cb87;text-decoration:none}.footer a:hover{text-decoration:underline}
+
     :focus-visible{outline:3px solid #e0b641;outline-offset:4px}
+
     @media(max-width:1000px){.speaker-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1.1fr .9fr}.hero h1{font-size:clamp(48px,5vw,65px)}.overview-grid{gap:30px}.meta-cell{padding:20px 17px}.meta-value{font-size:15px}}
+
     @media(max-width:720px){.wrap{padding:0 20px}.nav{height:70px}.nav-inner{gap:8px}.brand-copy span{display:none}.nav-links{gap:12px}.nav-links a:not(.nav-register){display:none}.nav-register{font-size:12px;padding:10px 14px}.hero-inner{display:flex;flex-direction:column;gap:5px;align-items:start;padding-top:66px;padding-bottom:100px}.hero h1{font-size:clamp(46px,10vw,68px)}.hero-art{width:min(320px,78%);align-self:center;opacity:.8;margin-top:-20px}.hero-lede{font-size:15px}.meta-grid{grid-template-columns:1fr 1fr}.meta-cell:nth-child(3):before{display:none}.meta-cell:nth-child(n+3){border-top:1px solid #e8e1ec}.section{padding:68px 0}.overview-grid,.talks-grid,.attend-grid,.organizer-inner{grid-template-columns:1fr;gap:20px}.section-header{display:block}.section-caption{margin-top:12px}.program-grid{grid-template-columns:1fr 1fr}.org-lockup{padding:20px}.footer-inner{display:block}.footer-inner p{margin-bottom:10px}}
+
     @media(max-width:470px){.speaker-grid,.program-grid{grid-template-columns:1fr}.speaker-art{height:120px}.speaker-details h3{font-size:23px}.meta-cell{padding:17px 14px}.meta-value{font-size:14px}.meta-sub{font-size:11px}.talk{padding:25px}.attend-card{padding:26px}.brand-copy strong{font-size:12px}.brand-mark{width:39px;height:39px}.btn{font-size:13px}}
+
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
     @media print{.nav,.hero-art,.hero-buttons,.footer{display:none}.hero{color:#24143a;background:white}.hero h1,.hero h1 em{color:#24143a}.hero-inner{min-height:0;padding:20px 0}.hero-lede{color:#24143a}.meta-rail{margin:0}.section{padding:25px 0}.speaker-grid{grid-template-columns:repeat(4,1fr)}.speaker-art{height:80px}.talks-grid{display:block}.talk{break-inside:avoid;margin-bottom:20px}}
-  
-    /* Faculty portrait cards. Photo links use public academic profile/news sources. */
+
+    /* Faculty portrait cards. Images are hosted locally in this seminar folder. */
+
     .speaker-art{height:193px;padding:0;justify-content:center;background:linear-gradient(130deg,#372055,#735196)}
+
     .speaker-art:before{z-index:0;opacity:.13}
+
     .speaker-photo{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 22%;z-index:0;transition:transform .35s ease;filter:saturate(.94)}
+
     .speaker-card:hover .speaker-photo{transform:scale(1.035)}
+
     .speaker-art--menon .speaker-photo{object-position:center 19%}
+
     .speaker-art--elfikky .speaker-photo{object-position:center 20%}
+
     .speaker-art--sierra .speaker-photo{object-position:center 16%}
+
     .speaker-art--shahriar .speaker-photo{object-position:center 23%}
+
     .speaker-photo-scrim{position:absolute;z-index:1;inset:42% 0 0;background:linear-gradient(to bottom,transparent,rgba(30,13,49,.78));pointer-events:none}
+
     .speaker-art .initials{display:none}
+
     .speaker-art.photo-missing .initials{display:block;opacity:.42;position:relative;z-index:2;right:auto;bottom:auto;font-size:68px}
+
     .speaker-photo-label{position:absolute;left:17px;bottom:20px;z-index:2;font:800 13px/1.15 'Outfit',sans-serif;letter-spacing:.015em;color:#fff;text-shadow:0 1px 7px rgba(19,6,37,.62)}
+
     .speaker-photo-credit{position:absolute;right:10px;bottom:5px;z-index:3;font:600 9px 'DM Sans',sans-serif;color:rgba(255,255,255,.9);text-decoration:none}
+
     .speaker-photo-credit:hover{text-decoration:underline}
+
     .talk-top{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:14px}
+
     .talk-top .talk-number{margin:10px 0 0}
+
     .talk-symbol{display:grid;place-items:center;flex:0 0 57px;width:57px;height:57px;background:linear-gradient(135deg,#372050,#5a3785);color:var(--gold);border:1px solid rgba(201,153,80,.46);border-radius:13px}
+
     .talk-symbol svg{width:37px;height:37px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
     .abstract-draft-note{font-size:12px!important;line-height:1.5!important;background:#fff9ed;border-left:3px solid #d9ad55;color:#6c5027!important;padding:10px 13px;border-radius:0 7px 7px 0;margin-bottom:21px}
+
     .keyword-list{gap:7px}
+
     .keyword-list span{line-height:1.25}
+
     @media(max-width:470px){.speaker-art{height:220px}.speaker-photo-label{font-size:15px}}
+
     @media print{.speaker-art{height:105px}.speaker-photo-credit{display:none}}
-  </style>
+
+  
+/* 2026 event update: registration, schedule, and Q-SHIELD logo */
+.nav-schedule{color:var(--purple)!important}
+.refreshments-pill{display:inline-block;background:rgba(240,201,107,.17);border:1px solid rgba(240,201,107,.45);border-radius:40px;padding:3px 10px;color:#ffe4a3;font-weight:800;letter-spacing:.005em}
+.meta-refreshments{color:#7a5015;font-weight:800}
+.board-rsvp{margin-top:26px;padding-top:22px;border-top:1px solid #e7deeb;display:grid;grid-template-columns:144px minmax(0,1fr);gap:16px;align-items:center}
+.board-qr-link,.rsvp-qr-link{display:inline-flex;justify-content:center;align-items:center;background:#fff;padding:6px;border:1px solid #e6dced;border-radius:12px;box-shadow:0 7px 16px rgba(32,17,47,.07);width:max-content;max-width:100%;flex-shrink:0}
+.board-qr-link img,.rsvp-qr-link img{display:block;max-width:100%;height:auto;image-rendering:auto}
+.board-rsvp-kicker{font:800 10px 'Outfit',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#93651e;margin-bottom:5px}
+.board-rsvp-content strong{display:block;font:700 17px/1.3 'Outfit',sans-serif;color:#2f1a42}
+.board-rsvp-content p{font-size:12px;line-height:1.55;color:#6c6173;margin:7px 0 12px}
+.board-rsvp-button{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:8px;text-decoration:none;font:700 12px 'Outfit',sans-serif;background:var(--purple);color:#fff;transition:background .2s}
+.board-rsvp-button:hover{background:#311852}
+.schedule-layout{position:relative;z-index:1}.program h2{max-width:none;margin-bottom:14px}
+.schedule-table{margin-top:36px;border-radius:15px;border:1px solid rgba(240,201,107,.26);overflow:hidden;background:rgba(255,255,255,.045);position:relative}
+.schedule-row{display:grid;grid-template-columns:minmax(180px,1.3fr) minmax(0,4fr) 95px;align-items:center;gap:22px;padding:20px 25px;border-bottom:1px solid rgba(255,255,255,.12)}
+.schedule-row:last-child{border-bottom:0}
+.schedule-head{background:rgba(240,201,107,.11);color:var(--gold);font:800 11px 'Outfit',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding-top:13px;padding-bottom:13px}
+.schedule-time{font:700 14px/1.4 'Outfit',sans-serif;color:#f2d995}
+.schedule-content strong{display:block;font:700 17px/1.35 'Outfit',sans-serif;color:#fff;margin-bottom:3px}
+.schedule-content span{display:block;color:#d2c7dd;font-size:13px;line-height:1.55}
+.schedule-content a{display:inline-block;color:#f0ca76;font:700 12px 'Outfit',sans-serif;margin-top:6px;text-decoration:none}
+.schedule-content a:hover{text-decoration:underline}
+.schedule-duration{color:#e4d8ed;font:800 12px 'Outfit',sans-serif;text-align:right;white-space:nowrap}
+.schedule-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:25px;flex-wrap:wrap}
+.schedule-refresh{background:rgba(240,201,107,.16);color:#ffe6a5;border:1px solid rgba(240,201,107,.45);padding:10px 17px;border-radius:9px;font:800 13px 'Outfit',sans-serif}
+.schedule-rsvp{text-decoration:none;background:var(--gold);color:#221132;padding:11px 20px;font:800 13px 'Outfit',sans-serif;border-radius:9px}
+.refreshments-inline{color:#6c4614;display:inline-block;background:#fff0cb;border-left:3px solid #d9ac3f;padding:6px 11px;border-radius:3px;margin-top:9px;font-weight:800}
+.rsvp-action-grid{display:grid;grid-template-columns:170px minmax(0,1fr);gap:21px;align-items:center;margin-top:26px;margin-bottom:12px}
+.rsvp-action-content strong{font:800 20px 'Outfit',sans-serif;color:#321b4e}
+.rsvp-action-content p{font-size:13px;line-height:1.65;margin-top:7px;margin-bottom:8px}
+.rsvp-action-content .btn{margin-top:4px}
+.rsvp-card .rsvp-status{background:#e7f2e6;color:#245f36}
+.rsvp-card .dot{background:#38a365}
+.org-logo-card{padding:22px;background:#fff;display:block;overflow:hidden}
+.org-logo-image{display:block;width:100%;height:auto;max-height:235px;object-fit:contain}
+@media(max-width:1100px){.board-rsvp{grid-template-columns:110px minmax(0,1fr)}.board-qr-link img{width:110px;height:110px}.rsvp-action-grid{grid-template-columns:140px minmax(0,1fr)}.rsvp-qr-link img{width:140px;height:140px}.nav-links{gap:17px}}
+@media(max-width:720px){.nav-links a:not(.nav-register):not(.nav-schedule){display:none}.nav-links a.nav-schedule{display:inline-flex!important;font-size:12px!important}.schedule-row{grid-template-columns:minmax(0,1fr) 70px;gap:8px 14px;padding:17px 18px}.schedule-head{display:none}.schedule-time{grid-column:1/-1;font-size:12px}.schedule-content strong{font-size:15px}.schedule-duration{align-self:start}.board-rsvp{grid-template-columns:126px 1fr}.board-qr-link img{width:126px;height:126px}.rsvp-action-grid{grid-template-columns:140px minmax(0,1fr)}}
+@media(max-width:470px){.board-rsvp{grid-template-columns:96px 1fr;gap:11px}.board-qr-link{padding:3px}.board-qr-link img{width:96px;height:96px}.board-rsvp-content strong{font-size:14px}.board-rsvp-content p{font-size:11px}.board-rsvp-button{padding:8px 11px;font-size:11px}.rsvp-action-grid{grid-template-columns:1fr;justify-items:start}.rsvp-action-content .btn{font-size:12px}.org-logo-card{padding:13px}.nav-links{gap:9px}.nav-register{padding:9px 10px}.brand{gap:8px}.brand-copy strong{font-size:11px}.brand-mark{width:35px;height:35px}}
+@media print{.schedule-table{border:1px solid #bbb;background:#fff}.schedule-row{color:#222;border-color:#ddd}.schedule-time,.schedule-content strong,.schedule-content span,.schedule-duration{color:#222}.rsvp-qr-link,.board-qr-link{box-shadow:none}}
+
+  
+/* Student Research & Capstone Showcase: standalone component. */
+.showcase-section{background:#fff;border-bottom:1px solid #e9e2ee}
+.showcase-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(290px,.82fr);align-items:center;gap:clamp(34px,5vw,75px)}
+.showcase-copy h2{max-width:680px;margin-bottom:25px}
+.showcase-copy h2 span{color:var(--purple)}
+.showcase-copy p{max-width:690px;font-size:16px;line-height:1.85;color:#504758;margin-bottom:16px}
+.showcase-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.showcase-tags span{font:700 12px/1.3 'Outfit',sans-serif;color:#563479;background:#f3eff8;border:1px solid #e5dcec;border-radius:50px;padding:9px 14px}
+.showcase-feature{position:relative;overflow:hidden;border-radius:20px;padding:35px 36px;background:linear-gradient(145deg,#29153e,#4a286b);color:#fff;box-shadow:0 20px 42px rgba(42,20,67,.14)}
+.showcase-feature:before{content:"";position:absolute;width:240px;height:240px;right:-120px;top:-120px;border:1px solid rgba(240,201,107,.35);border-radius:100%;box-shadow:0 0 0 38px rgba(240,201,107,.035),0 0 0 78px rgba(240,201,107,.025);pointer-events:none}
+.showcase-icon{display:flex;align-items:center;justify-content:center;width:82px;height:82px;border:1px solid rgba(240,201,107,.48);border-radius:17px;background:rgba(255,255,255,.045);color:var(--gold);margin-bottom:24px}
+.showcase-icon svg{width:58px;height:58px}
+.showcase-feature-label{font:800 11px/1.4 'Outfit',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.showcase-feature h3{font:600 28px/1.24 'Playfair Display',Georgia,serif;margin-bottom:13px;letter-spacing:-.02em;color:#fff}
+.showcase-feature p{color:#e3d9ed;font-size:14px;line-height:1.75;margin:0 0 20px}
+.showcase-feature-link{color:var(--gold);font:800 13px 'Outfit',sans-serif;text-decoration:none;border-bottom:1px solid rgba(240,201,107,.55);padding-bottom:4px}
+.showcase-feature-link:hover,.showcase-feature-link:focus-visible{color:#ffe2a0;border-color:#ffe2a0}
+@media(max-width:820px){.showcase-layout{grid-template-columns:1fr;gap:32px}.showcase-feature{max-width:600px}}
+@media(max-width:470px){.showcase-feature{padding:28px 24px}.showcase-feature h3{font-size:25px}.showcase-tags span{font-size:11px}}
+@media print{.showcase-section{background:white}.showcase-feature{background:white;color:#29153e;border:1px solid #bbb;box-shadow:none}.showcase-feature h3,.showcase-feature p,.showcase-feature-label,.showcase-feature-link{color:#29153e}}
+
+
+/* ================================================
+   COMPACT ORGANIZATION & SUPPORT: Seminar 2026
+   Replace the previous org2026 CSS block with this.
+   ================================================ */
+.organizer.org2026-section{padding:56px 0 58px;background:#ebe5f1}
+.org2026-header{margin-bottom:22px}
+.org2026-header .section-eyebrow{margin-bottom:7px}
+.org2026-header h2{margin:0 0 10px}
+.organizer .org2026-intro{font-size:14px;line-height:1.65;max-width:900px;margin:0;color:#574b61}
+.org2026-intro strong{color:#422267}
+.org2026-main{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(265px,.85fr);gap:19px;align-items:stretch}
+.org2026-team-area{min-width:0}
+.org2026-team-heading{display:flex;gap:14px;align-items:baseline;justify-content:space-between;margin-bottom:11px}
+.org2026-team-heading h3{font:700 18px/1.3 'Outfit',sans-serif;color:#281936;margin:0}
+.org2026-team-heading>span{font:600 11px 'DM Sans',sans-serif;color:#776985;white-space:nowrap}
+.org2026-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.org2026-person{display:flex;flex-direction:column;align-items:start;justify-content:start;min-width:0;min-height:103px;padding:14px 16px;background:rgba(255,255,255,.76);border:1px solid #dfd5e6;border-radius:10px}
+.org2026-person-top{display:flex;align-items:center;gap:6px;min-width:0;width:100%;margin-bottom:3px}
+.org2026-person-name{font:700 13.5px/1.38 'Outfit',sans-serif;color:#39214f;text-decoration:none}
+.org2026-person-name:hover,.org2026-email:hover{text-decoration:underline;text-underline-offset:3px}
+.org2026-person-name span{font-size:11px;color:#805ca4}
+.org2026-pi{flex:0 0 auto;font:800 10px/1 'Outfit',sans-serif;background:#4d287d;color:white;border-radius:4px;padding:4px 5px}
+.org2026-dept{font:400 11.5px/1.4 'DM Sans',sans-serif;color:#746a7a}
+.org2026-email{font:700 11.5px/1.45 'DM Sans',sans-serif;color:#68438c;text-decoration:none;overflow-wrap:anywhere;margin-top:7px}
+.org2026-side{display:grid;grid-template-rows:1fr auto;gap:10px;min-width:0;padding-top:34px}
+.org2026-contact-card{min-width:0;display:flex;flex-direction:column;align-items:start;gap:5px;padding:19px 19px 16px;background:#fff;border:1px solid #ded3e7;border-top:3px solid #d5a93e;border-radius:11px;box-shadow:0 8px 18px rgba(36,19,55,.045)}
+.org2026-kicker{font:800 10px/1.35 'Outfit',sans-serif;color:#7b4a9b;letter-spacing:.13em;margin-bottom:5px}
+.org2026-contact-card>strong{font:700 15px/1.3 'Outfit',sans-serif;color:#2e1a40}
+.org2026-contact-rank{font:500 11.5px/1.5 'DM Sans',sans-serif;color:#72667b;margin-bottom:6px}
+.org2026-contact-card a{font:700 12px/1.5 'DM Sans',sans-serif;color:#583282;text-decoration:none;overflow-wrap:anywhere}
+.org2026-contact-card a:hover{text-decoration:underline;text-underline-offset:3px}
+.org2026-grant{padding:12px 17px 13px;border-left:3px solid #d5a93e;background:#f8f3fc;border-radius:0 9px 9px 0}
+.org2026-grant .org2026-kicker{margin-bottom:3px}
+.org2026-grant strong{display:block;font:700 13px/1.35 'Outfit',sans-serif;color:#3d2460}
+.org2026-brand-strip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1.15fr);gap:0;margin-top:18px;border:1px solid #ded5e6;border-radius:12px;background:rgba(255,255,255,.78);overflow:hidden;align-items:center}
+.org2026-brand-item{min-width:0;padding:13px 18px;display:flex;flex-direction:column;align-items:center;gap:5px;border-right:1px solid #e6dfea}
+.org2026-brand-item>span{font:800 10px/1.2 'Outfit',sans-serif;letter-spacing:.12em;color:#6d4b86}
+.org2026-brand-item img{width:100%;max-width:195px;height:59px;object-fit:contain;display:block}
+.org2026-brand-lab img{max-width:210px;height:59px}
+.org2026-next{padding:12px 18px}
+.org2026-next strong{font:700 13px/1.35 'Outfit',sans-serif;color:#4b2973}
+.organizer .org2026-next p{font-size:11.5px;line-height:1.5;color:#675a73;margin:4px 0 0}
+@media(max-width:850px){
+  .org2026-main{grid-template-columns:1fr}
+  .org2026-side{grid-template-columns:1.2fr .8fr;grid-template-rows:auto;padding-top:0;align-items:stretch}
+  .org2026-brand-strip{grid-template-columns:1fr 1fr}
+  .org2026-brand-lab{border-right:0}
+  .org2026-next{grid-column:1/-1;border-top:1px solid #e6dfea;text-align:center}
+}
+@media(max-width:520px){
+  .organizer.org2026-section{padding:48px 0}
+  .org2026-team-heading{display:block}
+  .org2026-team-heading>span{display:block;margin-top:5px}
+  .org2026-directory{grid-template-columns:1fr}
+  .org2026-person{min-height:auto}
+  .org2026-side{grid-template-columns:1fr}
+  .org2026-brand-strip{grid-template-columns:1fr}
+  .org2026-brand-item{border-right:0;border-bottom:1px solid #e6dfea}
+  .org2026-next{grid-column:auto;border-top:0}
+}
+
+</style>
+
   <script type="application/ld+json">
+
   {"@context":"https://schema.org","@type":"EducationEvent","name":"Quantum-AI Seminar on Cybersecurity","startDate":"2026-11-02T10:00:00-06:00","endDate":"2026-11-02T14:00:00-06:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"DHSC 141 Auditorium, Doyne Health Science Center","address":{"@type":"PostalAddress","addressLocality":"Conway","addressRegion":"AR","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"Q-SHIELD Lab, University of Central Arkansas"},"isAccessibleForFree":true,"description":"An interdisciplinary university seminar presenting quantum entanglement, quantum machine learning, adaptive AI, and cybersecurity research."}
+
   </script>
+
 </head>
+
 <body>
+
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="nav">
+
   <div class="wrap nav-inner">
+
     <a class="brand" href="../index.html" aria-label="Q-SHIELD Lab home"><span class="brand-mark">Q·S</span><span class="brand-copy"><strong>Q-SHIELD LAB</strong><span>University of Central Arkansas</span></span></a>
+
     <nav class="nav-links" aria-label="Event navigation">
+
       <a href="../events.html">← Events</a>
-      <a href="#overview">Overview</a><a href="#speakers">Speakers</a><a href="#talks">Talk abstracts</a><a href="#program">Program</a><a href="#attend" class="nav-register">Attend seminar ↗</a>
+
+      <a href="#overview">Overview</a><a href="#speakers">Speakers</a><a href="#talks">Talk abstracts</a><a href="#schedule" class="nav-schedule">Schedule</a><a href="#showcase">Showcase</a><a href="#attend" class="nav-register">Attend seminar ↗</a>
+
     </nav>
+
   </div>
+
 </header>
+
 <main id="main">
+
 <section class="hero" aria-labelledby="event-title">
+
   <div class="wrap hero-inner">
+
     <div>
+
       <div class="eyebrow">UCA Quantum Machine Learning Seminar Series · Fall 2026</div>
+
       <h1 id="event-title">Quantum-AI Seminar <em>on Cybersecurity</em></h1>
-      <p class="hero-lede">From quantum entanglement to adaptive artificial intelligence: four invited research talks exploring the foundations, opportunities, and security challenges of emerging computing technologies.</p>
+
+      <p class="hero-lede">From quantum entanglement to adaptive artificial intelligence: four invited research talks and a UCA student research and capstone showcase exploring emerging computing technologies.</p>
+
       <div class="hero-buttons"><a class="btn btn-gold" href="#speakers">Explore the speakers <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#attend">Attendance &amp; venue <span aria-hidden="true">→</span></a></div>
-      <div class="hero-note">Free admission · Academic community welcome · Refreshments provided · <a style="color:#f0c96b;text-underline-offset:4px" href="event.ics">Add to calendar ↓</a></div>
+
+      <div class="hero-note">Free admission · Academic community welcome · <span class="refreshments-pill">☕ Refreshments provided</span> · <a style="color:#f0c96b;text-underline-offset:4px" href="event.ics">Add to calendar ↓</a></div>
+
     </div>
+
     <div class="hero-art" aria-hidden="true">
+
       <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+
         <defs><radialGradient id="glo" cx="50%" cy="40%" r="70%"><stop stop-color="#7745b3" stop-opacity=".8"/><stop offset="1" stop-color="#241232" stop-opacity="0"/></radialGradient><linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe8a5"/><stop offset=".45" stop-color="#e1b34e"/><stop offset="1" stop-color="#f9d87f"/></linearGradient></defs>
+
         <circle cx="250" cy="247" r="203" fill="none" stroke="#9980ab" stroke-opacity=".25" stroke-dasharray="3 8"/>
+
         <g class="hero-svg-ring"><ellipse cx="250" cy="250" rx="222" ry="83" fill="none" stroke="#e7bd65" stroke-width="1.7" transform="rotate(-27 250 250)"/><ellipse cx="250" cy="250" rx="221" ry="91" fill="none" stroke="#b28ad6" stroke-width="1.5" transform="rotate(38 250 250)"/><circle cx="48" cy="300" r="8" fill="#f2c971"/><circle cx="442" cy="171" r="7" fill="#c29dff"/><circle cx="337" cy="49" r="5" fill="#f2c971"/></g>
+
         <path d="M250 51 C291 85 362 95 389 95 L389 248 C389 350 324 415 250 457 C176 415 111 350 111 248 L111 95 C138 95 209 85 250 51Z" fill="#1e112c" fill-opacity=".65" stroke="url(#shield)" stroke-width="5"/>
+
         <path d="M250 75 C302 108 342 114 365 115 L365 241 C365 326 312 385 250 428 C188 385 135 326 135 241 L135 115 C158 114 198 108 250 75Z" fill="none" stroke="#f3cb78" stroke-opacity=".28" stroke-width="1.8"/>
+
         <circle cx="250" cy="247" r="117" fill="url(#glo)"/><circle cx="250" cy="247" r="101" fill="none" stroke="#f9edff" stroke-opacity=".87" stroke-width="1.5"/>
+
         <ellipse cx="250" cy="247" rx="101" ry="38" fill="none" stroke="#e7d9fa" stroke-opacity=".8" stroke-width="1.3"/>
+
         <ellipse cx="250" cy="247" rx="42" ry="101" fill="none" stroke="#e7d9fa" stroke-opacity=".6" stroke-width="1"/>
+
         <path d="M250 146 V348 M149 247 H351" stroke="#f3e5ff" stroke-opacity=".55" stroke-width="1.3" stroke-dasharray="3 5"/>
+
         <path d="M250 247 L302 184" stroke="#f5d072" stroke-width="3" stroke-linecap="round"/><circle cx="302" cy="184" r="7" fill="#f4d37f"/>
+
         <text x="250" y="132" font-family="Georgia,serif" font-size="23" fill="#f8eeff" text-anchor="middle">|0⟩</text><text x="250" y="383" font-family="Georgia,serif" font-size="23" fill="#f8eeff" text-anchor="middle">|1⟩</text>
+
         <g transform="translate(354 346)"><rect x="-34" y="-19" width="68" height="68" rx="15" fill="#3a1f56" stroke="#f0cc74" stroke-width="2"/><path d="M-14 12 V-1 A14 14 0 0 1 14 -1 V12" fill="none" stroke="#f5d57f" stroke-width="4"/><rect x="-19" y="9" width="38" height="26" rx="5" fill="#f0cc74"/><circle cx="0" cy="21" r="3.5" fill="#3a1f56"/></g>
+
         <circle cx="100" cy="142" r="4" fill="#eed18f"/><circle cx="395" cy="95" r="6" fill="#b6a2ec"/><circle cx="412" cy="415" r="4" fill="#eac66b"/>
+
       </svg>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="wrap meta-rail" aria-label="Event details">
+
+  <div class="meta-grid">
+
+    <div class="meta-cell"><div class="meta-label">Date</div><div class="meta-value">Monday, Nov. 2, 2026</div><div class="meta-sub">Fall 2026 seminar</div></div>
+
+    <div class="meta-cell"><div class="meta-label">Time</div><div class="meta-value">10:00 AM – 2:00 PM</div><div class="meta-sub">Central Standard Time</div></div>
+
+    <div class="meta-cell"><div class="meta-label">Venue</div><div class="meta-value">DHSC 141 Auditorium</div><div class="meta-sub">Doyne Health Science Center, UCA</div></div>
+
+    <div class="meta-cell"><div class="meta-label">Admission</div><div class="meta-value">Free of charge</div><div class="meta-sub meta-refreshments">☕ Refreshments provided</div></div>
+
+  </div>
+
+</div>
+
+<section class="section" id="overview">
+
+  <div class="wrap overview-grid"><div class="overview-copy"><div class="section-eyebrow">About the seminar</div><h2>Research perspectives at the intersection of quantum computing, AI, and security.</h2>
+
+    <p>Quantum computing and artificial intelligence are advancing along different technological paths, yet both raise foundational questions about computation, learning, and trust. This seminar connects the physical principles of quantum information with quantum machine learning, adaptive and explainable AI, and emerging cybersecurity challenges.</p>
+
+    <p>The program brings together speakers from the University of Central Arkansas, The Catholic University of America, the University of Arkansas at Little Rock, and the University of West Florida. Faculty, undergraduate and graduate students, and researchers from UCA and other colleges and universities are invited to participate.</p>
+
+    <div class="intro-note">No prior quantum computing experience is required. Talks will range from foundational concepts to active research questions.</div>
+
+  </div><aside class="topic-board" aria-label="Seminar themes"><h3>Four connected research perspectives</h3>
+
+    <div class="topic-item"><span class="topic-num">01</span><div><strong>Quantum foundations</strong><small>Qubits, superposition, EPR, Bell's theorem, entanglement.</small></div></div>
+
+    <div class="topic-item"><span class="topic-num">02</span><div><strong>Quantum machine learning</strong><small>Encoding, quantum circuits, hybrid quantum-classical models.</small></div></div>
+
+    <div class="topic-item"><span class="topic-num">03</span><div><strong>Trustworthy and adaptive AI</strong><small>Explainability, continual learning, evolving data.</small></div></div>
+
+    <div class="topic-item"><span class="topic-num">04</span><div><strong>Cybersecurity applications</strong><small>Quantum-AI and evolving security threats.</small></div></div>
+
+  <div class="board-rsvp">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL6sYJNLcH1y5hGf4KBWMgLe3WHHZ2FAGZhlixnfeqq63Ckw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="board-qr-link" aria-label="Open Google Form RSVP registration">
+      <img src="./qr-code.png" alt="Scannable QR code for seminar RSVP registration" width="144" height="144" loading="lazy">
+    </a>
+    <div class="board-rsvp-content">
+      <div class="board-rsvp-kicker">Free registration</div>
+      <strong>Reserve your place</strong>
+      <p>Scan the code or open the RSVP form to confirm attendance.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL6sYJNLcH1y5hGf4KBWMgLe3WHHZ2FAGZhlixnfeqq63Ckw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="board-rsvp-button">RSVP now <span aria-hidden="true">↗</span></a>
     </div>
   </div>
+</aside></div>
+
 </section>
-<div class="wrap meta-rail" aria-label="Event details">
-  <div class="meta-grid">
-    <div class="meta-cell"><div class="meta-label">Date</div><div class="meta-value">Monday, Nov. 2, 2026</div><div class="meta-sub">Fall 2026 seminar</div></div>
-    <div class="meta-cell"><div class="meta-label">Time</div><div class="meta-value">10:00 AM – 2:00 PM</div><div class="meta-sub">Central Standard Time</div></div>
-    <div class="meta-cell"><div class="meta-label">Venue</div><div class="meta-value">DHSC 141 Auditorium</div><div class="meta-sub">Doyne Health Science Center, UCA</div></div>
-    <div class="meta-cell"><div class="meta-label">Admission</div><div class="meta-value">Free of charge</div><div class="meta-sub">Refreshments provided</div></div>
-  </div>
-</div>
-<section class="section" id="overview">
-  <div class="wrap overview-grid"><div class="overview-copy"><div class="section-eyebrow">About the seminar</div><h2>Research perspectives at the intersection of quantum computing, AI, and security.</h2>
-    <p>Quantum computing and artificial intelligence are advancing along different technological paths, yet both raise foundational questions about computation, learning, and trust. This seminar connects the physical principles of quantum information with quantum machine learning, adaptive and explainable AI, and emerging cybersecurity challenges.</p>
-    <p>The program brings together speakers from the University of Central Arkansas, The Catholic University of America, the University of Arkansas at Little Rock, and the University of West Florida. Faculty, undergraduate and graduate students, and researchers from UCA and other colleges and universities are invited to participate.</p>
-    <div class="intro-note">No prior quantum computing experience is required. Talks will range from foundational concepts to active research questions.</div>
-  </div><aside class="topic-board" aria-label="Seminar themes"><h3>Four connected research perspectives</h3>
-    <div class="topic-item"><span class="topic-num">01</span><div><strong>Quantum foundations</strong><small>Qubits, superposition, EPR, Bell's theorem, entanglement.</small></div></div>
-    <div class="topic-item"><span class="topic-num">02</span><div><strong>Quantum machine learning</strong><small>Encoding, quantum circuits, hybrid quantum-classical models.</small></div></div>
-    <div class="topic-item"><span class="topic-num">03</span><div><strong>Trustworthy and adaptive AI</strong><small>Explainability, continual learning, evolving data.</small></div></div>
-    <div class="topic-item"><span class="topic-num">04</span><div><strong>Cybersecurity applications</strong><small>Quantum-AI and evolving security threats.</small></div></div>
-  </aside></div>
-</section>
+
 <section class="section speakers-section" id="speakers">
+
   <div class="wrap"><div class="section-header"><div><div class="section-eyebrow">Invited researchers</div><h2>Featured speakers</h2></div><div class="section-caption">Four faculty speakers. Four complementary approaches to the science and practice of secure intelligent systems.</div></div>
-    
+
 <div class="speaker-grid">
 
+
+
   <!-- Speaker 1: Dr. Balraj Menon -->
+
   <article class="speaker-card">
+
     <div class="speaker-art speaker-art--menon">
+
       <img
+
         class="speaker-photo"
+
         src="./menon.JPEG"
+
         alt="Portrait of Dr. Balraj Menon"
+
         loading="lazy"
+
         decoding="async"
+
         onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"
+
       >
+
       <span class="initials" aria-hidden="true">BM</span>
+
       <span class="speaker-photo-scrim" aria-hidden="true"></span>
+
       <!-- <span class="speaker-photo-label">Balraj Menon</span> -->
+
     </div>
 
+
+
     <div class="speaker-details">
+
       <div class="speaker-topic">Quantum Foundations</div>
+
       <h3>Balraj Menon, Ph.D.</h3>
+
       <p class="speaker-rank">Professor</p>
+
       <p class="speaker-inst">
+
         Department of Physics, Astronomy, and Engineering<br>
+
         University of Central Arkansas
+
       </p>
+
       <a class="speaker-link" href="#talk-menon">
+
         View talk abstract <span aria-hidden="true">↗</span>
+
       </a>
+
     </div>
+
   </article>
+
+
 
   <!-- Speaker 2: Dr. Daniel Sierra-Sosa -->
+
   <article class="speaker-card">
+
     <div class="speaker-art speaker-art--sierra">
+
       <img
+
         class="speaker-photo"
+
         src="./sierra-sosa.jpg"
+
         alt="Portrait of Dr. Daniel Sierra-Sosa"
+
         loading="lazy"
+
         decoding="async"
+
         onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"
+
       >
+
       <span class="initials" aria-hidden="true">DS</span>
+
       <span class="speaker-photo-scrim" aria-hidden="true"></span>
+
       <!-- <span class="speaker-photo-label">Daniel Sierra-Sosa</span> -->
+
     </div>
 
+
+
     <div class="speaker-details">
+
       <div class="speaker-topic">Quantum Computing &amp; QML</div>
+
       <h3>Daniel Sierra-Sosa, Ph.D.</h3>
+
       <p class="speaker-rank">Assistant Professor</p>
+
       <p class="speaker-inst">
+
         Department of Computer Science<br>
+
         The Catholic University of America
+
       </p>
+
       <a class="speaker-link" href="#talk-sierra">
+
         View talk abstract <span aria-hidden="true">↗</span>
+
       </a>
+
     </div>
+
   </article>
+
+
 
   <!-- Speaker 3: Dr. Abdelrahman Elfikky -->
+
   <article class="speaker-card">
+
     <div class="speaker-art speaker-art--elfikky">
+
       <img
+
         class="speaker-photo"
+
         src="./elfikky.jpeg"
+
         alt="Portrait of Dr. Abdelrahman Elfikky"
+
         loading="lazy"
+
         decoding="async"
+
         onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"
+
       >
+
       <span class="initials" aria-hidden="true">AE</span>
+
       <span class="speaker-photo-scrim" aria-hidden="true"></span>
+
       <!-- <span class="speaker-photo-label">Abdelrahman Elfikky</span> -->
+
     </div>
 
+
+
     <div class="speaker-details">
+
       <div class="speaker-topic">Explainable &amp; Adaptive AI</div>
+
       <h3>Abdelrahman Elfikky, Ph.D.</h3>
+
       <p class="speaker-rank">Assistant Professor</p>
+
       <p class="speaker-inst">
-        Department of Computer Science<br>
-        The Catholic University of America
+        University of Arkansas at Little Rock
       </p>
+
       <a class="speaker-link" href="#talk-elfikky">
+
         View talk abstract <span aria-hidden="true">↗</span>
+
       </a>
+
     </div>
+
   </article>
+
+
 
   <!-- Speaker 4: Dr. Hossain Shahriar -->
+
   <article class="speaker-card">
+
     <div class="speaker-art speaker-art--shahriar">
+
       <img
+
         class="speaker-photo"
+
         src="./shahriar.jpg"
+
         alt="Portrait of Dr. Hossain Shahriar"
+
         loading="lazy"
+
         decoding="async"
+
         onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"
+
       >
+
       <span class="initials" aria-hidden="true">HS</span>
+
       <span class="speaker-photo-scrim" aria-hidden="true"></span>
+
       <!-- <span class="speaker-photo-label">Hossain Shahriar</span> -->
+
     </div>
+
+
 
     <div class="speaker-details">
+
       <div class="speaker-topic">Cybersecurity</div>
+
       <h3>Hossain Shahriar, Ph.D.</h3>
+
       <p class="speaker-rank">
+
         Professor; Director of Educational Programs
+
       </p>
+
       <p class="speaker-inst">
+
         Center for Cybersecurity<br>
+
         University of West Florida
+
       </p>
+
       <a class="speaker-link" href="#talk-shahriar">
+
         View talk abstract <span aria-hidden="true">↗</span>
+
       </a>
+
     </div>
+
   </article>
+
 </div>
 
+
+
     <!-- <div class="speaker-grid">
+
       <article class="speaker-card"><div class="speaker-art speaker-art--menon"><img class="speaker-photo" src="https://uca.edu/physics/files/2011/08/balraj-210x263.jpg" alt="Portrait of Balraj Menon" loading="lazy" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"><span class="initials" aria-hidden="true">BM</span><span class="speaker-photo-scrim" aria-hidden="true"></span><span class="speaker-photo-label">Balraj Menon</span><a class="speaker-photo-credit" href="https://uca.edu/physics/facultystaff/balraj-menon-phd/" target="_blank" rel="noopener" aria-label="Portrait source: UCA">Photo: UCA</a></div><div class="speaker-details"><div class="speaker-topic">Quantum foundations</div><h3>Balraj Menon, Ph.D.</h3><p class="speaker-rank">Professor</p><p class="speaker-inst">Department of Physics, Astronomy, and Engineering<br>University of Central Arkansas</p><a class="speaker-link" href="#talk-menon">View talk abstract <span aria-hidden="true">↗</span></a></div></article>
+
       <article class="speaker-card"><div class="speaker-art speaker-art--sierra"><img class="speaker-photo" src="https://engineering.catholic.edu/research-and-faculty/faculty-profiles/computer-science/daniel-sierra-sosa/daniel-sierra-sosa1.jpg" alt="Portrait of Daniel Sierra-Sosa" loading="lazy" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"><span class="initials" aria-hidden="true">DS</span><span class="speaker-photo-scrim" aria-hidden="true"></span><span class="speaker-photo-label">Daniel Sierra-Sosa</span><a class="speaker-photo-credit" href="https://engineering.catholic.edu/research-and-faculty/faculty-profiles/computer-science/daniel-sierra-sosa/" target="_blank" rel="noopener" aria-label="Portrait source: Catholic University">Photo: Catholic University</a></div><div class="speaker-details"><div class="speaker-topic">Quantum computing &amp; QML</div><h3>Daniel Sierra-Sosa, Ph.D.</h3><p class="speaker-rank">Assistant Professor</p><p class="speaker-inst">Department of Computer Science<br>The Catholic University of America</p><a class="speaker-link" href="#talk-sierra">View talk abstract <span aria-hidden="true">↗</span></a></div></article>
+
       <article class="speaker-card"><div class="speaker-art speaker-art--elfikky"><img class="speaker-photo" src="../assets/img/people/elfikky.jpg" alt="Portrait of Abdelrahman Elfikky" loading="lazy" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"><span class="initials" aria-hidden="true">AE</span><span class="speaker-photo-scrim" aria-hidden="true"></span><span class="speaker-photo-label">Abdelrahman Elfikky</span><a class="speaker-photo-credit" href="../team.html" target="_blank" rel="noopener" aria-label="Portrait source: Q-SHIELD Lab">Photo: Q-SHIELD Lab</a></div><div class="speaker-details"><div class="speaker-topic">Explainable &amp; adaptive AI</div><h3>Abdelrahman Elfikky, Ph.D.</h3><p class="speaker-rank">Assistant Professor</p><p class="speaker-inst">University of Arkansas at Little Rock</p><a class="speaker-link" href="#talk-elfikky">View talk abstract <span aria-hidden="true">↗</span></a></div></article>
+
       <article class="speaker-card"><div class="speaker-art speaker-art--shahriar"><img class="speaker-photo" src="https://www.kennesaw.edu/news/stories/images/2021/HossainShahriar_story.jpg" alt="Portrait of Hossain Shahriar" loading="lazy" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('photo-missing')"><span class="initials" aria-hidden="true">HS</span><span class="speaker-photo-scrim" aria-hidden="true"></span><span class="speaker-photo-label">Hossain Shahriar</span><a class="speaker-photo-credit" href="https://www.kennesaw.edu/news/stories/2021/ksu-faculty-nsf-grant-detect-cybersecurity-attacks.php" target="_blank" rel="noopener" aria-label="Portrait source: Kennesaw State University">Photo: Kennesaw State University</a></div><div class="speaker-details"><div class="speaker-topic">Cybersecurity</div><h3>Hossain Shahriar, Ph.D.</h3><p class="speaker-rank">Professor; Director of Educational Programs</p><p class="speaker-inst">Center for Cybersecurity<br>University of West Florida</p><a class="speaker-link" href="#talk-shahriar">View talk details <span aria-hidden="true">↗</span></a></div></article>
+
     </div> -->
+
   </div>
+
 </section>
+
 <section class="section" id="talks">
- <div class="wrap"><div class="section-eyebrow">Scientific program</div><h2>Research talks &amp; abstracts</h2><p class="section-intro">Explore each presentation below. Read the research abstracts and thematic keywords for each presentation. Dr. Shahriar’s abstract is an organizer-prepared draft pending speaker confirmation; individual talk times will be announced separately.</p>
+
+ <div class="wrap"><div class="section-eyebrow">Scientific program</div><h2>Research talks &amp; abstracts</h2><p class="section-intro">Explore the seminar presentations, thematic keywords, and full abstracts. The talks appear in the order of the seminar schedule.</p>
+
  <div class="talks-grid">
-  <article class="talk" id="talk-menon"><div class="talk-top"><div class="talk-number">TALK 01 · QUANTUM FOUNDATIONS</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="40" rx="31" ry="12"/><ellipse cx="40" cy="40" rx="31" ry="12" transform="rotate(60 40 40)"/><ellipse cx="40" cy="40" rx="31" ry="12" transform="rotate(120 40 40)"/><circle cx="40" cy="40" r="5" fill="currentColor" stroke="none"/></svg></span></div><h3>The Physical Foundations of Quantum Entanglement</h3><div class="talk-presenter">Balraj Menon, Ph.D. · University of Central Arkansas</div>
-    <div class="keyword-list" aria-label="Talk keywords"><span>Qubits</span><span>Quantum superposition</span><span>Quantum entanglement</span><span>EPR paradox</span><span>Bell’s theorem</span><span>Quantum computation</span></div>
-    <p>From qubits and superposition to the Einstein–Podolsky–Rosen paradox, Bell's theorem, and the role of entanglement in quantum computation.</p>
-    <details><summary>Read complete abstract</summary><div class="full"><p>Quantum entanglement is a profound feature of quantum mechanics and an essential resource in quantum information science. This talk introduces the foundational mathematical framework relevant to quantum computing -  specifically, the superposition principle, qubits, and entangled states.  We will trace the evolution of quantum entanglement from its origins as an apparent paradox articulated by Einstein, Podolsky, and Rosen to its resolution through John Bell's pivotal theorem, concluding with the essential role entanglement plays in quantum computation.</p></div></details>
-  </article>
-  <article class="talk" id="talk-sierra"><div class="talk-top"><div class="talk-number">TALK 02 · QUANTUM MACHINE LEARNING</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="16" y="16" width="48" height="48" rx="7"/><rect x="27" y="28" width="26" height="23" rx="3"/><path d="M6 26h10M6 40h10M6 54h10M64 26h10M64 40h10M64 54h10M26 6v10M40 6v10M54 6v10M26 64v10M40 64v10M54 64v10"/><circle cx="40" cy="39" r="7"/></svg></span></div><h3>Quantum Machine Learning: Should We Go Fully Quantum?</h3><div class="talk-presenter">Daniel Sierra-Sosa, Ph.D. · The Catholic University of America</div>
-    <div class="keyword-list" aria-label="Talk keywords"><span>Quantum machine learning</span><span>Quantum circuits</span><span>Quantum data encoding</span><span>Quantum measurement</span><span>Hybrid quantum–classical models</span><span>Near-term quantum devices</span></div>
-    <p>How classical data is encoded into quantum states, processed through circuits, and measured, and where hybrid quantum-classical approaches make practical sense.</p>
-    <details><summary>Read complete abstract</summary><div class="full"><p>Quantum machine learning brings together two exciting fields, but it also raises an important question: how much of a machine learning model actually needs to be quantum? In this talk, I will introduce the fundamental building blocks of quantum machine learning, from encoding classical data into quantum states to processing information through quantum circuits and extracting meaningful results through measurements. We will explore how these components work together and how they can be combined with classical techniques to build hybrid quantum-classical models.</p><p>We will discuss the opportunities and limitations of current quantum computing technologies, the challenges of working with quantum data, and the practical decisions involved in designing quantum machine learning models. Ultimately, the goal is not necessarily to make everything quantum, but to understand where quantum computing can make a meaningful contribution.</p></div></details>
-  </article>
-  <article class="talk" id="talk-elfikky"><div class="talk-top"><div class="talk-number">TALK 03 · TRUSTWORTHY AI</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="15" cy="19" r="6"/><circle cx="15" cy="59" r="6"/><circle cx="40" cy="28" r="6"/><circle cx="40" cy="52" r="6"/><circle cx="65" cy="40" r="6"/><path d="M21 19L34 28M21 19L34 52M21 59L34 28M21 59L34 52M46 28L59 40M46 52L59 40"/></svg></span></div><h3>Beyond the Hype: Building Explainable and Adaptive AI for Real-World Applications</h3><div class="talk-presenter">Abdelrahman Elfikky, Ph.D. · University of Arkansas at Little Rock</div>
+<article class="talk" id="talk-elfikky"><div class="talk-top"><div class="talk-number">TALK 01 · TRUSTWORTHY AI</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="15" cy="19" r="6"/><circle cx="15" cy="59" r="6"/><circle cx="40" cy="28" r="6"/><circle cx="40" cy="52" r="6"/><circle cx="65" cy="40" r="6"/><path d="M21 19L34 28M21 19L34 52M21 59L34 28M21 59L34 52M46 28L59 40M46 52L59 40"/></svg></span></div><h3>Beyond the Hype: Building Explainable and Adaptive AI for Real-World Applications</h3><div class="talk-presenter">Abdelrahman Elfikky, Ph.D. · University of Arkansas at Little Rock</div>
+
     <div class="keyword-list" aria-label="Talk keywords"><span>Artificial intelligence</span><span>Machine learning</span><span>Explainable AI (XAI)</span><span>Continual learning</span><span>Incremental learning</span><span>Trustworthy AI</span><span>Cybersecurity</span><span>Anomaly detection</span><span>Concept drift</span></div>
+
     <p>Explainable artificial intelligence and continual learning for cyber threats that evolve beyond the assumptions of static models.</p>
+
     <details><summary>Read complete abstract</summary><div class="full"><p>Artificial Intelligence (AI) is transforming cybersecurity and many other real-world applications. However, despite impressive advances, significant challenges remain in making AI systems trustworthy, explainable, and adaptable to rapidly changing environments. Traditional machine learning models often assume that training and deployment data follow similar patterns. In reality, cyber threats continuously evolve, new attack strategies emerge, and previously effective models can become outdated. Furthermore, many powerful AI models operate as black boxes, making it difficult for users to understand their predictions or trust their decisions.</p><p>This talk explores two important directions for moving AI beyond the hype: Explainable Artificial Intelligence (XAI) and Continual Learning (CL). XAI aims to make AI decisions more transparent, understandable, and actionable, while continual learning enables models to acquire new knowledge and adapt to emerging threats without repeatedly retraining from scratch or forgetting previously learned information. Using cybersecurity as a primary application, we will discuss how these approaches can support intrusion detection, anomaly detection, and evolving threat identification. We will also highlight key challenges, including concept drift, catastrophic forgetting, explanation reliability, and the trade-offs between model accuracy, adaptability, and interpretability.</p><p>Through practical examples and ongoing research directions, the presentation will demonstrate how explainability and continual learning can complement each other to create more reliable and sustainable AI solutions. The talk will also discuss opportunities for students and researchers to contribute to the development of AI systems that do more than achieve high benchmark accuracy. These systems should be able to explain their decisions, learn from changing environments, and remain useful in real-world applications.</p></div></details>
+
   </article>
-  <article class="talk" id="talk-shahriar"><div class="talk-top"><div class="talk-number">TALK 04 · SECURITY RESEARCH</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 6C50 14 62 17 69 17V41C69 58 55 69 40 75C25 69 11 58 11 41V17C18 17 30 14 40 6Z"/><rect x="30" y="37" width="20" height="20" rx="3"/><path d="M33 37V30a7 7 0 0 1 14 0v7"/><circle cx="40" cy="47" r="2" fill="currentColor" stroke="none"/></svg></span></div><h3>Quantum-AI in Cybersecurity: Exploring Applications of Evolving Security Threat</h3><div class="talk-presenter">Hossain Shahriar, Ph.D. · University of West Florida</div>
+<article class="talk" id="talk-menon"><div class="talk-top"><div class="talk-number">TALK 02 · QUANTUM FOUNDATIONS</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="40" rx="31" ry="12"/><ellipse cx="40" cy="40" rx="31" ry="12" transform="rotate(60 40 40)"/><ellipse cx="40" cy="40" rx="31" ry="12" transform="rotate(120 40 40)"/><circle cx="40" cy="40" r="5" fill="currentColor" stroke="none"/></svg></span></div><h3>The Physical Foundations of Quantum Entanglement</h3><div class="talk-presenter">Balraj Menon, Ph.D. · University of Central Arkansas</div>
+
+    <div class="keyword-list" aria-label="Talk keywords"><span>Qubits</span><span>Quantum superposition</span><span>Quantum entanglement</span><span>EPR paradox</span><span>Bell’s theorem</span><span>Quantum computation</span></div>
+
+    <p>From qubits and superposition to the Einstein–Podolsky–Rosen paradox, Bell's theorem, and the role of entanglement in quantum computation.</p>
+
+    <details><summary>Read complete abstract</summary><div class="full"><p>Quantum entanglement is a profound feature of quantum mechanics and an essential resource in quantum information science. This talk introduces the foundational mathematical framework relevant to quantum computing -  specifically, the superposition principle, qubits, and entangled states.  We will trace the evolution of quantum entanglement from its origins as an apparent paradox articulated by Einstein, Podolsky, and Rosen to its resolution through John Bell's pivotal theorem, concluding with the essential role entanglement plays in quantum computation.</p></div></details>
+
+  </article>
+<article class="talk" id="talk-sierra"><div class="talk-top"><div class="talk-number">TALK 03 · QUANTUM MACHINE LEARNING</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="16" y="16" width="48" height="48" rx="7"/><rect x="27" y="28" width="26" height="23" rx="3"/><path d="M6 26h10M6 40h10M6 54h10M64 26h10M64 40h10M64 54h10M26 6v10M40 6v10M54 6v10M26 64v10M40 64v10M54 64v10"/><circle cx="40" cy="39" r="7"/></svg></span></div><h3>Quantum Machine Learning: Should We Go Fully Quantum?</h3><div class="talk-presenter">Daniel Sierra-Sosa, Ph.D. · The Catholic University of America</div>
+
+    <div class="keyword-list" aria-label="Talk keywords"><span>Quantum machine learning</span><span>Quantum circuits</span><span>Quantum data encoding</span><span>Quantum measurement</span><span>Hybrid quantum–classical models</span><span>Near-term quantum devices</span></div>
+
+    <p>How classical data is encoded into quantum states, processed through circuits, and measured, and where hybrid quantum-classical approaches make practical sense.</p>
+
+    <details><summary>Read complete abstract</summary><div class="full"><p>Quantum machine learning brings together two exciting fields, but it also raises an important question: how much of a machine learning model actually needs to be quantum? In this talk, I will introduce the fundamental building blocks of quantum machine learning, from encoding classical data into quantum states to processing information through quantum circuits and extracting meaningful results through measurements. We will explore how these components work together and how they can be combined with classical techniques to build hybrid quantum-classical models.</p><p>We will discuss the opportunities and limitations of current quantum computing technologies, the challenges of working with quantum data, and the practical decisions involved in designing quantum machine learning models. Ultimately, the goal is not necessarily to make everything quantum, but to understand where quantum computing can make a meaningful contribution.</p></div></details>
+
+  </article>
+<article class="talk" id="talk-shahriar"><div class="talk-top"><div class="talk-number">TALK 04 · SECURITY RESEARCH</div><span class="talk-symbol"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 6C50 14 62 17 69 17V41C69 58 55 69 40 75C25 69 11 58 11 41V17C18 17 30 14 40 6Z"/><rect x="30" y="37" width="20" height="20" rx="3"/><path d="M33 37V30a7 7 0 0 1 14 0v7"/><circle cx="40" cy="47" r="2" fill="currentColor" stroke="none"/></svg></span></div><h3>Quantum-AI in Cybersecurity: Exploring Applications of Evolving Security Threat</h3><div class="talk-presenter">Hossain Shahriar, Ph.D. · University of West Florida</div>
+
     <div class="keyword-list" aria-label="Talk keywords"><span>Quantum machine learning</span><span>Cybersecurity</span><span>Malware classification</span><span>Intrusion detection</span><span>Anomaly detection</span><span>Adversarial robustness</span><span>Hybrid quantum–classical AI</span></div>
+
     <p>Investigating hybrid quantum–classical approaches for malware analysis, intrusion and anomaly detection, and cybersecurity under changing and adversarial conditions.</p>
-    <!-- <p class="abstract-draft-note"><strong>Proposed abstract:</strong> Draft prepared by the organizers; subject to Dr. Shahriar’s review and approval.</p> -->
-    <details><summary>Read proposed abstract</summary><div class="full"><p>As cybersecurity threats evolve, detection systems must operate under changing data distributions and increasingly sophisticated adversarial behavior. This talk will examine how quantum machine learning and hybrid quantum–classical AI can be investigated for security applications such as malware classification, network intrusion detection, and anomaly detection. It will introduce key design choices, including security-relevant feature selection, quantum data encoding, parameterized quantum circuits, and the integration of quantum models with classical learning methods. The discussion will consider the practical challenges of evaluating these approaches against well-tuned classical baselines, particularly when confronted with class imbalance, previously unseen attacks, adversarial manipulation, and concept drift. It will also address the limitations of near-term quantum hardware, including qubit constraints, circuit noise, data-loading costs, and computational overhead. Rather than assuming that quantum methods automatically outperform classical models, the talk will identify research questions where quantum–AI techniques warrant careful empirical study, with an emphasis on reproducibility, robustness, and trustworthy cybersecurity applications.</p></div></details>
+
+    <details><summary>Read complete abstract</summary><div class="full"><p>As cybersecurity threats evolve, detection systems must operate under changing data distributions and increasingly sophisticated adversarial behavior. This talk will examine how quantum machine learning and hybrid quantum–classical AI can be investigated for security applications such as malware classification, network intrusion detection, and anomaly detection. It will introduce key design choices, including security-relevant feature selection, quantum data encoding, parameterized quantum circuits, and the integration of quantum models with classical learning methods. The discussion will consider the practical challenges of evaluating these approaches against well-tuned classical baselines, particularly when confronted with class imbalance, previously unseen attacks, adversarial manipulation, and concept drift. It will also address the limitations of near-term quantum hardware, including qubit constraints, circuit noise, data-loading costs, and computational overhead. Rather than assuming that quantum methods automatically outperform classical models, the talk will identify research questions where quantum–AI techniques warrant careful empirical study, with an emphasis on reproducibility, robustness, and trustworthy cybersecurity applications.</p></div></details>
+
   </article>
- </div></div>
+</div></div>
+
 </section>
-<section class="section program" id="program">
-  <div class="wrap"><div class="section-eyebrow">Event format</div><h2>One seminar. Four research perspectives.</h2><p class="program-copy">The seminar runs from 10:00 AM to 2:00 PM. The program will feature four invited presentations and opportunities for questions and interdisciplinary discussion.</p>
-    <div class="program-grid"><div class="program-step"><small>FOCUS 01</small><strong>Quantum foundations</strong><p>Qubits, superposition, entanglement and the foundations of quantum information.</p></div><div class="program-step"><small>FOCUS 02</small><strong>Quantum machine learning</strong><p>Quantum circuits, measurements and hybrid model design.</p></div><div class="program-step"><small>FOCUS 03</small><strong>Explainable &amp; adaptive AI</strong><p>Trustworthy models, continual learning and evolving cyber threats.</p></div><div class="program-step"><small>FOCUS 04</small><strong>Cybersecurity</strong><p>Research perspectives on quantum-AI and security challenges.</p></div></div>
-    <p class="program-note">The focus areas are thematic, not a confirmed presentation order. Exact talk times and breaks will be announced.</p>
+
+<section class="section program" id="schedule" aria-labelledby="schedule-title">
+  <div class="wrap schedule-layout">
+    <div class="section-eyebrow">Monday, November 2, 2026</div>
+    <h2 id="schedule-title">Seminar schedule</h2>
+    <p class="program-copy">10:00 AM – 2:00 PM · DHSC 141 Auditorium, University of Central Arkansas</p>
+    <div class="schedule-table" role="table" aria-label="Quantum-AI Seminar 2026 agenda">
+      <div class="schedule-row schedule-head" role="row">
+        <span role="columnheader">Time</span><span role="columnheader">Session</span><span role="columnheader">Duration</span>
+      </div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">10:00 – 10:15 AM</div><div class="schedule-content" role="cell"><strong>Opening remarks</strong><span>Welcome and introduction to the seminar</span></div><div class="schedule-duration" role="cell">15 min</div></div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">10:15 – 11:15 AM</div><div class="schedule-content" role="cell"><strong>Dr. Abdelrahman Elfikky</strong><span>Beyond the Hype: Building Explainable and Adaptive AI for Real-World Applications</span><a href="#talk-elfikky">Read abstract ↗</a></div><div class="schedule-duration" role="cell">60 min</div></div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">11:15 AM – 12:00 PM</div><div class="schedule-content" role="cell"><strong>Dr. Balraj Menon</strong><span>The Physical Foundations of Quantum Entanglement</span><a href="#talk-menon">Read abstract ↗</a></div><div class="schedule-duration" role="cell">45 min</div></div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">12:00 – 1:00 PM</div><div class="schedule-content" role="cell"><strong>Dr. Daniel Sierra-Sosa</strong><span>Quantum Machine Learning: Should We Go Fully Quantum?</span><a href="#talk-sierra">Read abstract ↗</a></div><div class="schedule-duration" role="cell">60 min</div></div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">1:00 – 1:45 PM</div><div class="schedule-content" role="cell"><strong>Dr. Hossain Shahriar</strong><span>Quantum-AI in Cybersecurity: Exploring Applications of Evolving Security Threat</span><a href="#talk-shahriar">Read abstract ↗</a></div><div class="schedule-duration" role="cell">45 min</div></div>
+      <div class="schedule-row" role="row"><div class="schedule-time" role="cell">1:45 – 2:00 PM</div><div class="schedule-content" role="cell"><strong>Closing remarks</strong><span>Seminar wrap-up and acknowledgments</span></div><div class="schedule-duration" role="cell">15 min</div></div>
+    </div>
+    <div class="schedule-bottom">
+      <span class="schedule-refresh">☕ Refreshments will be provided</span>
+      <a class="schedule-rsvp" href="https://docs.google.com/forms/d/e/1FAIpQLSfL6sYJNLcH1y5hGf4KBWMgLe3WHHZ2FAGZhlixnfeqq63Ckw/viewform?usp=header" target="_blank" rel="noopener noreferrer">Confirm attendance ↗</a>
+    </div>
   </div>
 </section>
+
+<!-- UCA Student Research & Capstone Showcase -->
+<section class="section showcase-section" id="showcase" aria-labelledby="showcase-title">
+  <div class="wrap showcase-layout">
+    <div class="showcase-copy">
+      <div class="section-eyebrow">Student engagement · Applied research</div>
+      <h2 id="showcase-title">Student Research &amp; <span>Capstone Showcase</span></h2>
+      <p>Alongside the invited faculty presentations, UCA students will showcase research and projects developed through Software Engineering Capstone courses and related student research activities.</p>
+      <p>The showcase provides an opportunity to engage with student teams, learn about their technical approaches, and discuss how classroom projects connect with research and practical computing challenges.</p>
+      <div class="showcase-tags" aria-label="Showcase themes">
+        <span>Software Engineering Capstone</span>
+         <span>Cybsersecurity Capstone</span>
+        <span>Student research</span>
+      </div>
+    </div>
+    <aside class="showcase-feature" aria-label="Student showcase highlight">
+      <div class="showcase-icon" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2">
+          <rect x="12" y="15" width="56" height="42" rx="5"/>
+          <path d="M27 64h26M40 57v7M22 29l-6 7 6 7M58 29l6 7-6 7M45 27l-10 20"/>
+          <circle cx="59" cy="17" r="9" fill="#F0C96B" stroke="#F0C96B"/>
+          <path d="m55 17 3 3 6-7" stroke="#291540" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="showcase-feature-label">Student-led research</div>
+      <h3>From coursework to research</h3>
+      <p>Discover students' work and connect with the next generation of computing researchers and software developers.</p>
+      <a href="#attend" class="showcase-feature-link">Attend the seminar <span aria-hidden="true">↗</span></a>
+    </aside>
+  </div>
+</section>
+
 <section class="section" id="attend">
+
  <div class="wrap"><div class="section-eyebrow">Plan your visit</div><h2>Attend the seminar</h2><div class="attend-grid">
-  <div class="attend-card"><h3>Venue &amp; attendance</h3><p>The seminar is free to attend and welcomes faculty, students, researchers, and academic attendees from UCA and other universities. Refreshments will be provided; advance RSVP is encouraged for planning.</p>
+
+  <div class="attend-card"><h3>Venue &amp; attendance</h3><p>The seminar is free to attend and welcomes faculty, students, researchers, and academic attendees from UCA and other universities. Advance RSVP is encouraged for planning. <strong class="refreshments-inline">☕ Refreshments will be provided.</strong></p>
+
     <div class="venue-facts"><div><strong>Where</strong><span>Doyne Health Science Center (DHSC), Room 141 Auditorium<br>University of Central Arkansas, Conway, Arkansas</span></div><div><strong>When</strong><span>Monday, November 2, 2026<br>10:00 AM – 2:00 PM (Central Standard Time)</span></div><div><strong>Cost</strong><span>Free admission; no prior quantum computing experience required.</span></div></div>
+
     <a class="btn btn-outline" style="background:#fff;color:#4d287d;border-color:#cec0da" href="https://www.google.com/maps/search/?api=1&amp;query=Doyne+Health+Science+Center+University+of+Central+Arkansas" target="_blank" rel="noopener">Find the venue ↗</a>
+
   </div>
-  <div class="attend-card rsvp-card"><div class="rsvp-status"><span class="dot"></span><span id="rsvp-status-text">RSVP link to be announced</span></div><h3>Confirm your attendance</h3><p>Advance RSVP helps the organizers estimate attendance and plan refreshments. Once registration is available, the form link will appear here.</p>
-    <a id="rsvp-link" class="btn btn-gold rsvp-primary" href="#attend" target="_blank" rel="noopener" style="display:none">Complete the RSVP form ↗</a>
-    <a id="rsvp-fallback" class="btn btn-gold rsvp-fallback" href="mailto:mhossainfaruk@uca.edu?subject=Quantum-AI%20Seminar%20RSVP%20Inquiry">Ask about registration ↗</a>
-    <p class="registration-help">When a Google Form registration URL is confirmed, it can be added in one line of this page's configuration. No participant information is collected by this website itself.</p>
+
+  <div class="attend-card rsvp-card">
+    <div class="rsvp-status"><span class="dot"></span><span>RSVP registration open</span></div>
+    <h3>Confirm your attendance</h3>
+    <p>Admission is free. Please register in advance to help us plan seating and refreshments.</p>
+    <div class="rsvp-action-grid">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL6sYJNLcH1y5hGf4KBWMgLe3WHHZ2FAGZhlixnfeqq63Ckw/viewform?usp=header" class="rsvp-qr-link" target="_blank" rel="noopener noreferrer" aria-label="Open seminar RSVP Google Form">
+        <img src="./qr-code.png" alt="QR code linking to the Quantum-AI Seminar attendance form" width="170" height="170" loading="lazy">
+      </a>
+      <div class="rsvp-action-content">
+        <strong>Scan to RSVP</strong>
+        <p>Use your phone camera or select the button below to open the Google Form.</p>
+        <a class="btn btn-gold rsvp-button-active" href="https://docs.google.com/forms/d/e/1FAIpQLSfL6sYJNLcH1y5hGf4KBWMgLe3WHHZ2FAGZhlixnfeqq63Ckw/viewform?usp=header" target="_blank" rel="noopener noreferrer">Complete the RSVP form <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <p class="registration-help">Registration responses are collected through Google Forms, not this website.</p>
   </div>
- </div></div>
+</div></div>
 </section>
-<section class="section organizer" id="organizers">
- <div class="wrap organizer-inner"><div><div class="section-eyebrow">Organization &amp; support</div><h2>Hosted at UCA</h2><p>Organized by the Quantum and Software for Health Informatics and Emerging Defense Lab (Q-SHIELD), Department of Computer Science and Engineering, University of Central Arkansas.</p><p>This event is part of the UCA Quantum Machine Learning Seminar Series, supported by the <strong>UCA Foundation Faculty Grant</strong>.</p><div class="faculty-team"><strong>Faculty project team</strong><span>Md Jobair Hossain Faruk, Principal Investigator · Computer Science and Engineering</span><span>Sharif Ullah · Computer Science and Engineering</span><span>Saif Bhuiyan · Computer Information Systems &amp; Analytics</span><span>Balraj Menon · Physics, Astronomy, and Engineering</span></div><p class="contact-inline"><strong>Event contact</strong><br>Md Jobair Hossain Faruk, Ph.D., Assistant Professor<br><a href="mailto:mhossainfaruk@uca.edu">mhossainfaruk@uca.edu</a> · (501) 450-3308</p></div>
- <div><div class="org-lockup"><div class="org-monogram">Q·S</div><div><strong>Q-SHIELD Lab</strong><small>Quantum and Software for Health Informatics and Emerging Defense Lab<br>University of Central Arkansas</small></div></div><p style="font-size:13px;margin:23px 0 0">The seminar series also plans a Spring 2027 edition focused on Quantum Machine Learning in Health Informatics. Further details will be announced separately.</p></div></div>
+
+
+<section class="section organizer org2026-section" id="organizers" aria-labelledby="org2026-title">
+  <div class="wrap">
+    <div class="org2026-header">
+      <div class="section-eyebrow">Organization &amp; Support</div>
+      <h2 id="org2026-title">Hosted at UCA</h2>
+      <p class="org2026-intro">Organized by the <strong>Q-SHIELD Lab</strong>, Department of Computer Science and Engineering, University of Central Arkansas, as part of the UCA Quantum Machine Learning Seminar Series.</p>
+    </div>
+
+    <div class="org2026-main">
+      <div class="org2026-team-area" aria-labelledby="org2026-team-heading">
+        <div class="org2026-team-heading">
+          <h3 id="org2026-team-heading">Faculty Organizing Team</h3>
+          <span>UCA faculty collaborators</span>
+        </div>
+        <div class="org2026-directory">
+          <div class="org2026-person">
+            <div class="org2026-person-top">
+              <a class="org2026-person-name" href="https://uca.edu/cse/facultystaff/md-jobair-hossain-faruk/" target="_blank" rel="noopener noreferrer">Md Jobair Hossain Faruk, Ph.D. <span aria-hidden="true">↗</span></a>
+              <span class="org2026-pi">PI</span>
+            </div>
+            <span class="org2026-dept">Computer Science &amp; Engineering</span>
+            <a class="org2026-email" href="mailto:mhossainfaruk@uca.edu">mhossainfaruk@uca.edu</a>
+          </div>
+          <div class="org2026-person">
+            <div class="org2026-person-top">
+              <a class="org2026-person-name" href="https://uca.edu/cse/facultystaff/sharif-ullah/" target="_blank" rel="noopener noreferrer">Sharif Ullah, Ph.D. <span aria-hidden="true">↗</span></a>
+            </div>
+            <span class="org2026-dept">Computer Science &amp; Engineering</span>
+            <a class="org2026-email" href="mailto:mullah@uca.edu">mullah@uca.edu</a>
+          </div>
+          <div class="org2026-person">
+            <div class="org2026-person-top">
+              <a class="org2026-person-name" href="https://uca.edu/cisa/facultystaff/sbhuiyan/" target="_blank" rel="noopener noreferrer">Saif Bhuiyan, Ph.D. <span aria-hidden="true">↗</span></a>
+            </div>
+            <span class="org2026-dept">Computer Information Systems &amp; Analytics</span>
+            <a class="org2026-email" href="mailto:sbhuiyan@uca.edu">sbhuiyan@uca.edu</a>
+          </div>
+          <div class="org2026-person">
+            <div class="org2026-person-top">
+              <a class="org2026-person-name" href="https://uca.edu/physics/facultystaff/balraj-menon-phd/" target="_blank" rel="noopener noreferrer">Balraj Menon, Ph.D. <span aria-hidden="true">↗</span></a>
+            </div>
+            <span class="org2026-dept">Physics, Astronomy &amp; Engineering</span>
+            <a class="org2026-email" href="mailto:menonb@uca.edu">menonb@uca.edu</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="org2026-side" aria-label="Event contact and funding">
+        <div class="org2026-contact-card">
+          <div class="org2026-kicker">EVENT CONTACT</div>
+          <strong>Md Jobair Hossain Faruk, Ph.D.</strong>
+          <span class="org2026-contact-rank">Assistant Professor · Principal Investigator</span>
+          <a href="mailto:mhossainfaruk@uca.edu">mhossainfaruk@uca.edu</a>
+          <a href="tel:+15014503308">(501) 450-3308</a>
+        </div>
+        <div class="org2026-grant">
+          <div class="org2026-kicker">PROJECT SUPPORT</div>
+          <strong>UCA Foundation Faculty Grant</strong>
+        </div>
+      </aside>
+    </div>
+
+    <div class="org2026-brand-strip" aria-label="Institutional affiliations and future seminar">
+      <div class="org2026-brand-item">
+        <span>HOST DEPARTMENT</span>
+        <img src="./University%20of%20Central%20Arkansas%20Computer%20Science%20Logo.png" alt="University of Central Arkansas Department of Computer Science and Engineering" loading="lazy">
+      </div>
+      <div class="org2026-brand-item org2026-brand-lab">
+        <span>ORGANIZING RESEARCH LAB</span>
+        <img src="./Q-SHIELD-Lab-Logo.png" alt="Q-SHIELD Lab" loading="lazy">
+      </div>
+      <div class="org2026-next">
+        <strong>Coming in Spring 2027</strong>
+        <p>Quantum Machine Learning in Health Informatics, the second seminar in the UCA series.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+
 </main>
+
 <footer class="footer"><div class="wrap footer-inner"><p>© 2026 Q-SHIELD Lab · University of Central Arkansas</p><p><a href="../events.html">All Events</a> &nbsp;·&nbsp; <a href="../index.html">Q-SHIELD Lab website</a> &nbsp;·&nbsp; <a href="mailto:mhossainfaruk@uca.edu">Contact</a></p></div></footer>
-<script>
-/* CONFIGURATION: Paste the confirmed Google Form respondent URL below, then commit. */
-const RSVP_URL = '';
-if (RSVP_URL.trim()) {
-  const primary = document.getElementById('rsvp-link');
-  const fallback = document.getElementById('rsvp-fallback');
-  const status = document.getElementById('rsvp-status-text');
-  primary.href = RSVP_URL.trim();
-  primary.style.display = 'inline-flex';
-  fallback.style.display = 'none';
-  status.textContent = 'RSVP registration available';
-}
-</script>
+
+
+
 </body>
+
 </html>
