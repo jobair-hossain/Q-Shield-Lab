@@ -1,0 +1,60 @@
+/* ================================================
+   COMPACT ORGANIZATION & SUPPORT: Seminar 2026
+   Replace the previous org2026 CSS block with this.
+   ================================================ */
+.organizer.org2026-section{padding:56px 0 58px;background:#ebe5f1}
+.org2026-header{margin-bottom:22px}
+.org2026-header .section-eyebrow{margin-bottom:7px}
+.org2026-header h2{margin:0 0 10px}
+.organizer .org2026-intro{font-size:14px;line-height:1.65;max-width:900px;margin:0;color:#574b61}
+.org2026-intro strong{color:#422267}
+.org2026-main{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(265px,.85fr);gap:19px;align-items:stretch}
+.org2026-team-area{min-width:0}
+.org2026-team-heading{display:flex;gap:14px;align-items:baseline;justify-content:space-between;margin-bottom:11px}
+.org2026-team-heading h3{font:700 18px/1.3 'Outfit',sans-serif;color:#281936;margin:0}
+.org2026-team-heading>span{font:600 11px 'DM Sans',sans-serif;color:#776985;white-space:nowrap}
+.org2026-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.org2026-person{display:flex;flex-direction:column;align-items:start;justify-content:start;min-width:0;min-height:103px;padding:14px 16px;background:rgba(255,255,255,.76);border:1px solid #dfd5e6;border-radius:10px}
+.org2026-person-top{display:flex;align-items:center;gap:6px;min-width:0;width:100%;margin-bottom:3px}
+.org2026-person-name{font:700 13.5px/1.38 'Outfit',sans-serif;color:#39214f;text-decoration:none}
+.org2026-person-name:hover,.org2026-email:hover{text-decoration:underline;text-underline-offset:3px}
+.org2026-person-name span{font-size:11px;color:#805ca4}
+.org2026-pi{flex:0 0 auto;font:800 10px/1 'Outfit',sans-serif;background:#4d287d;color:white;border-radius:4px;padding:4px 5px}
+.org2026-dept{font:400 11.5px/1.4 'DM Sans',sans-serif;color:#746a7a}
+.org2026-email{font:700 11.5px/1.45 'DM Sans',sans-serif;color:#68438c;text-decoration:none;overflow-wrap:anywhere;margin-top:7px}
+.org2026-side{display:grid;grid-template-rows:1fr auto;gap:10px;min-width:0;padding-top:34px}
+.org2026-contact-card{min-width:0;display:flex;flex-direction:column;align-items:start;gap:5px;padding:19px 19px 16px;background:#fff;border:1px solid #ded3e7;border-top:3px solid #d5a93e;border-radius:11px;box-shadow:0 8px 18px rgba(36,19,55,.045)}
+.org2026-kicker{font:800 10px/1.35 'Outfit',sans-serif;color:#7b4a9b;letter-spacing:.13em;margin-bottom:5px}
+.org2026-contact-card>strong{font:700 15px/1.3 'Outfit',sans-serif;color:#2e1a40}
+.org2026-contact-rank{font:500 11.5px/1.5 'DM Sans',sans-serif;color:#72667b;margin-bottom:6px}
+.org2026-contact-card a{font:700 12px/1.5 'DM Sans',sans-serif;color:#583282;text-decoration:none;overflow-wrap:anywhere}
+.org2026-contact-card a:hover{text-decoration:underline;text-underline-offset:3px}
+.org2026-grant{padding:12px 17px 13px;border-left:3px solid #d5a93e;background:#f8f3fc;border-radius:0 9px 9px 0}
+.org2026-grant .org2026-kicker{margin-bottom:3px}
+.org2026-grant strong{display:block;font:700 13px/1.35 'Outfit',sans-serif;color:#3d2460}
+.org2026-brand-strip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1.15fr);gap:0;margin-top:18px;border:1px solid #ded5e6;border-radius:12px;background:rgba(255,255,255,.78);overflow:hidden;align-items:center}
+.org2026-brand-item{min-width:0;padding:13px 18px;display:flex;flex-direction:column;align-items:center;gap:5px;border-right:1px solid #e6dfea}
+.org2026-brand-item>span{font:800 10px/1.2 'Outfit',sans-serif;letter-spacing:.12em;color:#6d4b86}
+.org2026-brand-item img{width:100%;max-width:195px;height:59px;object-fit:contain;display:block}
+.org2026-brand-lab img{max-width:210px;height:59px}
+.org2026-next{padding:12px 18px}
+.org2026-next strong{font:700 13px/1.35 'Outfit',sans-serif;color:#4b2973}
+.organizer .org2026-next p{font-size:11.5px;line-height:1.5;color:#675a73;margin:4px 0 0}
+@media(max-width:850px){
+  .org2026-main{grid-template-columns:1fr}
+  .org2026-side{grid-template-columns:1.2fr .8fr;grid-template-rows:auto;padding-top:0;align-items:stretch}
+  .org2026-brand-strip{grid-template-columns:1fr 1fr}
+  .org2026-brand-lab{border-right:0}
+  .org2026-next{grid-column:1/-1;border-top:1px solid #e6dfea;text-align:center}
+}
+@media(max-width:520px){
+  .organizer.org2026-section{padding:48px 0}
+  .org2026-team-heading{display:block}
+  .org2026-team-heading>span{display:block;margin-top:5px}
+  .org2026-directory{grid-template-columns:1fr}
+  .org2026-person{min-height:auto}
+  .org2026-side{grid-template-columns:1fr}
+  .org2026-brand-strip{grid-template-columns:1fr}
+  .org2026-brand-item{border-right:0;border-bottom:1px solid #e6dfea}
+  .org2026-next{grid-column:auto;border-top:0}
+}
