@@ -103,9 +103,79 @@ input,select,textarea{font:inherit}
   color:#fff;padding:34px 24px 28px;display:flex;flex-direction:column;gap:18px;z-index:60;
   scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent;
 }
-.sidebar-badge{width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a2160,var(--purple-950));display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.22),0 12px 30px -10px rgba(0,0,0,.55);margin:0 auto 22px}
-.sidebar-badge img{width:70px;height:70px}
-.sidebar-title{font-family:var(--font-display);text-align:center;font-size:17px;font-weight:600;line-height:1.4;color:#fff;margin:0 0 14px}
+
+/* Q-SHIELD full-logo sidebar styling */
+
+.sidebar {
+  padding: 24px 24px 28px;
+  gap: 13px;
+}
+
+/* Keep elements from shrinking on shorter screens */
+
+
+/* Q-SHIELD Sidebar Logo: Subtle Academic Glow */
+
+.sidebar .sidebar-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 12px;
+  padding: 8px 2px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.sidebar .sidebar-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* Soft lavender-white edge and subtle purple glow */
+  filter:
+    drop-shadow(0 0 1px rgba(244, 237, 255, 0.62))
+    drop-shadow(0 0 4px rgba(172, 135, 224, 0.18));
+
+  transition: filter 220ms ease;
+}
+
+/* Subtle hover, without excessive brightness */
+.sidebar .sidebar-badge:hover img,
+.sidebar .sidebar-badge:focus-visible img {
+  filter:
+    drop-shadow(0 0 1.5px rgba(250, 247, 255, 0.78))
+    drop-shadow(0 0 6px rgba(177, 145, 234, 0.28))
+    drop-shadow(0 0 9px rgba(63, 224, 232, 0.09));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar .sidebar-badge img {
+    transition: none;
+  }
+}
+
+
+
+.sidebar-org {
+  text-align: center;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #cdb9ec;
+  margin: 0 0 4px;
+}
+
+.sidebar-affiliation {
+  margin-top: 28px;
+}
+
+.sidebar-title{font-family:var(--font-display);text-align:center;font-size:20.5px;font-weight:600;line-height:1.4;color:#fff;margin:0 0 14px}
+
 /* Emphasize the initials that form Q-SHIELD, without repeating the lab name on Home. */
 .sidebar-title .sidebar-initial{font-weight:800;color:#bceef3;text-decoration:underline;text-decoration-color:var(--cyan);text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-skip-ink:none}
 .sidebar-org{text-align:center;font-size:12.5px;color:#cdb9ec;line-height:1.6;margin:0 0 10px}
@@ -344,6 +414,28 @@ main{flex:1}
 .status-chip{font:700 11px/1 var(--font-body);letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-block;margin-top:6px}
 .status-chip.funded{background:#e4f2ea;color:#127a4c}
 .status-chip.submitted{background:var(--soft-2);color:var(--purple-700)}
+
+
+/* Larger funding agency logos on Awards page */
+
+@media (min-width: 751px) {
+  .grant-card {
+    grid-template-columns: minmax(0, 1fr) 138px;
+  }
+}
+
+.grant-card .logo-box {
+  width: 138px;
+  height: 94px;
+  padding: 6px;
+}
+
+.grant-card .logo-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* ---------- 11. PUBLICATIONS ---------- */
 .pub-toolbar{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:16px;align-items:end;background:var(--soft);padding:22px;border-radius:14px;margin-bottom:6px}
